@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  width: 80vw;
+  height: 80vh;
+  border: 3px solid black;
+  position: relative;
+}
+
+.sp1 {
+	font-size: 10em;
+	position: relative;
+}
+
+.sp2 {
+	font-size: 6em;
+	position: relative;
+}
+
+.sp3 {
+	font-size: 2em;
+	position: relative;
+}
+
+.hidden {
+	display: none;
+} 
+
+</style>
+</head>
+<body>
+
+	<div onmouseenter="getCoor(event)" onmousemove="showCoords(event)" onmouseout="clearCoor()">
+	
+	<span id="z" class="hidden sp1">z</span>
+	<span id="w" class="hidden sp1">w</span>
+	<span id="v" class="hidden sp1">v</span>
+	<span id="u" class="hidden sp1">u</span>	
+	<span id="t" class="hidden sp1">t</span>
+	<span id="s" class="hidden sp1">s</span>
+	<span id="r" class="hidden sp1">r</span>
+	<span id="q" class="hidden sp1">q</span>		
+	<span id="p" class="hidden sp2">p</span>
+	<span id="o" class="hidden sp2">o</span>
+	<span id="n" class="hidden sp2">n</span>
+	<span id="m" class="hidden sp2">m</span>	
+	<span id="l" class="hidden sp2">l</span>
+	<span id="k" class="hidden sp2">k</span>
+	<span id="j" class="hidden sp2">j</span>
+	<span id="i" class="hidden sp2">i</span>		
+	<span id="h" class="hidden sp3">h</span>
+	<span id="g" class="hidden sp3">g</span>
+	<span id="f" class="hidden sp3">f</span>
+	<span id="e" class="hidden sp3">e</span>	
+	<span id="d" class="hidden sp3">d</span>
+	<span id="c" class="hidden sp3">c</span>
+	<span id="b" class="hidden sp3">b</span>
+	<span id="a" class="hidden sp3">a</span>	
+	
+	</div>
+
+	<p>Mouse over the rectangle above to get the horizontal and vertical coordinates of your mouse pointer.</p>
+
+	<p id="demo"></p>
+
+
+
+
+
+
+
+	<script>
+	var w = document.getElementById("w");
+	var e = document.getElementById("e");
+	
+	var tabSpanElt = document.getElementsByTagName("span");
+	console.log(tabSpanElt);
+	
+	
+	var maxX = document.querySelector("div").offsetHeight;
+	var maxY = document.querySelector("div").offsetWidth;
+	console.log(maxX, maxY);
+	
+	var x;
+	var y;
+	
+	var difTabX = [];
+	var difTabY = [];
+	
+	function getRndInteger(min, max) {
+	  return Math.floor(Math.random() * (max - min + 1) ) + min;
+	}	
+	
+	function getCoor(event) {
+		console.log("e", event);
+		  x = event.clientX;
+		  y = event.clientY;
+	
+	var ex = getRndInteger(1, maxX);
+	
+		for (cpt = 0; cpt< tabSpanElt.length; cpt++) {
+			var spanX = getRndInteger(1, maxX);
+			var spanY = getRndInteger(1, maxY);
+			var difX = spanX - x;
+			var difY = spanY - x;
+			difTabX.push(difX);
+			difTabY.push(difY);
+			tabSpanElt[cpt].classList.remove("hidden");
+		}
+	/*
+	dif = ex - x;
+	console.log(ex, x , dif);*/
+	
+	}
+	
+	
+	
+	
+	
+
+
+	function showCoords(event) {
+	
+	//console.log(event);
+	   x = event.clientX;
+	   y = event.clientY;
+	  var coor = "X coords: " + x + ", Y coords: " + y;
+	  document.getElementById("demo").innerHTML = coor;
+	  
+	for (cpt = 0; cpt< tabSpanElt.length; cpt++) {
+	
+		if(cpt<8) {
+		   var newX =(x+difTabX[cpt])/4;
+		   var newY =(y+difTabY[cpt])/4;
+	   }
+	   
+	   else if (cpt >= 8 && cpt< 16) {
+		   var newX =(x+difTabX[cpt])/8;
+		   var newY =(y+difTabY[cpt])/8;	   
+	   }
+	   
+	   else {
+		   var newX =(x+difTabX[cpt])/12;
+		   var newY =(y+difTabY[cpt])/12;	 	   
+	  }
+
+	  tabSpanElt[cpt].style.left = newX+"px";
+
+	  tabSpanElt[cpt].style.top = newY+"px";		
+	}
+	  
+/*
+	   var newx =(x+dif)/4;
+	   var newy =(y+dif)/4;
+	   console.log("a ",x, dif, newx);
+	  e.style.left = newx+"px";
+
+	  e.style.top = newy+"px";
+*/
+	}
+
+	function clearCoor() {
+	  document.getElementById("demo").innerHTML = "";
+	}
+	
+	
+		//var cor = 1600 - ((carouselElt.scrollLeft - 3000)*2)+"px";
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>WebDevRem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="onloadBody()">
+	
+	
+	
+		<a id="prev" onclick="onclickPrev()">&#10094;</a>
+		<a id="next" onclick="onclickNext()">&#10095;</a>		
+	<div id="cont">
+
+
+		<div class="slide" id=sl0 onmouseenter="getCoor(event)" onmousemove="showCoords(event)">
+	
+			<h1 class="hidden">Web&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;Dev</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rem </h1>
+
+
+			<span id="a" class="lettre sp1">w</span>
+			<span id="b" class="lettre sp1">e</span>
+			<span id="c" class="lettre sp1">b</span>
+			<span id="d" class="lettre sp1">d</span>	
+			<span id="e" class="lettre sp1">v</span>
+			<span id="f" class="lettre sp1">r</span>
+			<span id="g" class="lettre sp1">m</span>
+			<span id="h" class="lettre sp1">w</span>		
+			<span id="i" class="lettre sp1">e</span>
+			<span id="j" class="lettre sp1">d</span>
+			<span id="k" class="lettre sp1">v</span>
+			<span id="l" class="lettre sp1">r</span>	
+			<span id="m" class="lettre sp1">m</span>		
+			<span id="n" class="lettre sp1">w</span>
+			<span id="o" class="lettre sp1">e</span>
+			<span id="p" class="lettre sp1">b</span>
+			
+			<span id="q" class="lettre sp2">d</span>
+			<span id="r" class="lettre sp2">v</span>
+			<span id="s" class="lettre sp2">r</span>
+			<span id="t" class="lettre sp2">m</span>	
+			<span id="u" class="lettre sp2">w</span>
+			<span id="v" class="lettre sp2">d</span>
+			<span id="w" class="lettre sp3">r</span>
+			<span id="z" class="lettre sp3">e</span>	
+			<span id="aa" class="lettre sp1">w</span>
+			<span id="bb" class="lettre sp1">e</span>	
+			<span id="cc" class="lettre sp1">b</span>
+			<span id="dd" class="lettre sp1">d</span>	
+			<span id="ee" class="lettre sp1">v</span>
+			<span id="ff" class="lettre sp1">r</span>
+			<span id="gg" class="lettre sp1">m</span>
+			<span id="hh" class="lettre sp1">w</span>
+			
+			<span id="ii" class="lettre sp2">e</span>
+			<span id="jj" class="lettre sp2">d</span>
+			<span id="kk" class="lettre sp2">v</span>
+			<span id="ll" class="lettre sp2">r</span>	
+			<span id="mm" class="lettre sp2">m</span>
+			<span id="nn" class="lettre sp2">w</span>
+			<span id="oo" class="lettre sp2">e</span>
+			<span id="pp" class="lettre sp2">b</span>		
+			<span id="qq" class="lettre sp3">d</span>
+			<span id="rr" class="lettre sp3">v</span>
+			<span id="ss" class="lettre sp3">r</span>
+			<span id="tt" class="lettre sp3">m</span>	
+			<span id="uu" class="lettre sp3">w</span>
+			<span id="vv" class="lettre sp3">d</span>
+			<span id="ww" class="lettre sp3">r</span>
+			<span id="zz" class="lettre sp3">e</span>	
+			
+			<div id="tw" class="lettreTitre sp1">w</div>		
+			<div id="te1" class="lettreTitre sp2">e</div>
+			<div id="tb" class="lettreTitre sp1">b</div>
+			<div id="td" class="lettreTitre sp1">d</div>
+			<div id="te2" class="lettreTitre sp2">e</div>	
+			<div id="tv" class="lettreTitre sp1">v</div>
+			<div id="tr" class="lettreTitre sp1">r</div>
+			<div id="te3" class="lettreTitre sp2">e</div>
+			<div id="tm" class="lettreTitre sp1">m</div>	
+		
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="slide" id=sl1>
+			<div id=sl1Child>
+				<div id="asideLogo">
+
+					<img src="html5.png" id="htmlLogo" class="clickme" width="60%" onclick="typeWriter()">
+
+					<img src="css3.png" id="cssLogo" class="hidden" width="60%" >									
+				
+					<img src="js.png" id="jsLogo" class="hidden" width="60%" onclick="onclickJs()">									
+
+				</div>
+
+				<div class="container" id="cont1" onclick="typeWriter()">
+					<div class="row">
+						<div class="column left">
+							<span class="dot" style="background:#ED594A;"></span>
+							<span class="dot" style="background:#FDD800;"></span>
+							<span class="dot" style="background:#5AC05A;"></span>
+						</div>
+						<div class="column middle">
+							<input type="text" value="http://www.WebDevRem.fr">
+						</div>
+						<div class="column right">
+							<div style="float:right">
+								<span class="bar"></span>
+								<span class="bar"></span>
+								<span class="bar"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="content">
+						<p id="html"></p>
+						<div id="before" class="hidden">
+						voici mon <span id="ptflo">portfolio</span> ou je vais vous détailler mes compétences. </br>
+
+								Comme vous le constatez je maitrise le <span id="html5">html5</span> <span id="smiley"> :)</span> </br>
+
+								Mais ce n'est pas tout, je maitrise aussi le <span id="css3">css3</span>,
+
+								clickez sur le logo pour voir ca!
+						</div>
+						<div >
+							<div id="header" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)" >
+								<div>
+								  <h2><span id="bonjour">Bonjour, je suis </span>Remy B.</h2>
+								  <h2>Développeur Web Junior<h2>
+								</div>
+							</div>
+							<h3 id="main1" class="hidden">Actuellement en formation  professionnelle qualifiante</h3>
+							<h5 id="main2" class="hidden">Greta Aix en Provence 2019-2020</h5>
+							
+								<p id="main3" class="hidden">Concevoir et développer une application web</p>
+								<p id="main4" class="hidden">Comprendre et formaliser les demandes d'un client</p>
+								<p id="main5" class="hidden">Rédaction d'un cahier des charges</p>
+								<p id="main6" class="hidden">Réalisation d'une maquette (Adobe XD)</p>
+								<p id="main7" class="hidden">Intégration HTML et CSS, design responsive</p>
+								<p id="main8" class="hidden">Dynamiser un site (JavaScript)</p>
+								<p id="main9" class="hidden">Communication avec un serveur (PHP)</p>
+								<p id="main10" class="hidden">Gérer le contenu d'une base de données</p>
+								
+
+
+
+							<div class="rows">
+							  <div id="side" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<img src="avatar.png" id="avatar" draggable="false" ondragstart="drag(event)" width="200" height="200">
+								<p id="quote">oh vous etes là , je ne vous avez pas vu !</p>
+								
+							  </div>
+							  <div id="main" class="hidden">
+								<h3>Actuellement en formation  professionnelle qualifiante</h3>
+								<h5>Greta d'Aix en Provence 2019-2020</h5>
+								<ul>
+									<li>Concevoir et développer une application web</li>
+									<li>Comprendre et formaliser les demandes d'un client</li>
+									<li>Rédaction d'un cahier des charges</li>
+									<li>Réalisation d'une maquette (Adobe XD)</li>
+									<li>Intégration HTML et CSS, design responsive</li>
+									<li>Dynamiser un site (JavaScript)</li>
+									<li>Communication avec un serveur (PHP)</li>
+									<li>Gérer le contenu d'une base de données</li>
+								</ul>
+								<br>
+							  </div>
+							</div>
+							<div id="compFooter" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<h3 id="compe1" class="hidden">Compétences</h3>
+								<div id="comp" draggable="false" ondragstart="drag(event)">
+									<span id="compe2" class="hidden" class="comp">Html5</span>
+									<span id="compe3" class="hidden" class="comp">Css3</span>
+									<span id="compe4" class="hidden" class="comp">JavaScript</span>
+									<span id="compe5" class="hidden" class="comp">PHP</span>
+									<span id="compe6" class="hidden" class="comp">MySql</span>
+									<span id="compe7" class="hidden" class="comp">Wordpress</span>	
+								</div>
+							</div>																				
+
+							<div id="footer" class="hidden">
+								<h3>@WebDevRem</h3>
+							</div>
+						</div>
+					<!--
+
+						<p id="html"></p>
+						<div class="hidden" id="css">
+							<div id="main">
+								voici mon <span id="ptflo">portfolio</span> ou je vais vous détailler mes compétences. </br>
+
+								Comme vous le constatez je maitrise le <span id="html5">html5</span> <span id="smiley"> :)</span> </br>
+
+								Mais ce n'est pas tout, je maitrise aussi le <span id="css3">css3</span>,
+
+								clickez sur le logo pour voir ca!
+														
+									<div class="hidden" id="pic">
+										<img src="avatar.png" id="avatar" width="200" height="200">
+									</div>
+									<div id="header">
+										<p id="title">Bonjour, je suis Remy B. </p>
+										<p id="dev">Developpeur Web Junior</p>
+									</div>
+
+							</div>
+						</div>
+					-->
+					</div>
+					<ul id="colorBox" class="hidden">
+						<li id="#7CB342" onclick="colorChoice(event)">#7CB342</li>
+						<li id="#546E7A" onclick="colorChoice(event)">#546E7A</li>
+						<li id="#00897B" onclick="colorChoice(event)">#00897B</li>
+						<li id="#F4511E" onclick="colorChoice(event)">#F4511E</li>
+						<li id="#1E88E5" onclick="colorChoice(event)">#1E88E5</li>
+						<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
+					<ul>
+					
+					<ul id="colorBox2" class="hidden">
+						<li id="#C5E1A5" onclick="colorChoice(event)">#C5E1A5</li>
+						<li id="#90A4AE" onclick="colorChoice(event)">#7CB342</li>
+						<li id="#4DB6AC" onclick="colorChoice(event)">#4DB6AC</li>
+						<li id="#FF8A65" onclick="colorChoice(event)">#FF8A65</li>
+						<li id="#64B5F6" onclick="colorChoice(event)">#64B5F6</li>
+						<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
+					<ul>					
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="slide" id=sl2>
+			<div class="container">
+					<div class="row">
+						<div class="column left">
+							<span class="dot" style="background:#ED594A;"></span>
+							<span class="dot" style="background:#FDD800;"></span>
+							<span class="dot" style="background:#5AC05A;"></span>
+						</div>
+						<div class="column middle">
+							<input type="text" value="http://www.WebDevRem.fr/MVOTD">
+						</div>
+						<div class="column right">
+							<div style="float:right">
+								<span class="bar"></span>
+								<span class="bar"></span>
+								<span class="bar"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="content">
+							<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank"><img src="mvotd.png" id="mvotd" ></a>
+								
+					</div>
+			</div>
+											
+		</div>		
+		<div class="slide" id=sl3>
+		
+		</div>
+		<div class="slide" id=sl4>
+		</div>	
+		
+		
+
+
+	</div>
+	<script src="main.js"></script>
+</body>
+</html> 

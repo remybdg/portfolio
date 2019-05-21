@@ -1,0 +1,762 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	position: relative;	
+	height:100vh;
+	margin: 0;
+	overflow-y:hidden;
+	/*overflow-x:hidden;*/
+}
+
+
+/* conteneur principal */
+#cont {
+	display: flex;
+	position: relative;
+	height:100vh;
+	width:600vw;
+    background-image: linear-gradient(to right, #3217e5, #0067ff, #008bf5, #00a5d1, #00b9b4, #07bb94, #4ab968, #7ab434, #9a9c00, #b67f00, #cc5b00, #da2018);
+}
+
+.slide {
+	position: relative;
+	height:100vh;
+	width:100vw;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*
+#sl0 {
+    background-color: red;
+}
+#sl1 {
+    background-color: orange;
+}
+#sl2 {
+    background-color: yellow;
+}
+#sl3 {
+    background-color: green;
+}
+#sl4 {
+    background-color: blue;
+}
+*/
+
+
+.hidden {
+	display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*------------------------- Next & previous buttons------------------ */
+#prev, #next {
+  cursor: pointer;
+  position: fixed;
+  top: 45%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-size: 4em;
+  user-select: none; /* ne marche pas !!!*/
+}
+
+/* Position the "next button" to the right */
+#next {
+    right: 0;
+    z-index: 1;
+}
+
+#prev {
+   left: 0;
+   z-index: 1;
+}
+
+
+/*-----------------------slide0-----------------------*/
+
+@font-face {
+    font-family: 'CF Three Dimensions Personal';
+    src: url('CFThreeDimensionsPersonal-Reg.eot');
+    src: url('CFThreeDimensionsPersonal-Reg.eot?#iefix') format('embedded-opentype'),
+        url('CFThreeDimensionsPersonal-Reg.woff2') format('woff2'),
+        url('CFThreeDimensionsPersonal-Reg.woff') format('woff'),
+        url('CFThreeDimensionsPersonal-Reg.ttf') format('truetype'),
+        url('CFThreeDimensionsPersonal-Reg.svg#CFThreeDimensionsPersonal-Reg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+	color: white;
+	font-family: CF Three Dimensions Personal;
+	font-size: 16em;
+	line-height: 0.9em;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+    transform: rotate(-20deg);
+	margin: auto;
+	text-align: center;
+	vertical-align: center;
+	position: absolute;
+}
+
+#tw {
+	top: 8vh;
+	left: 15vw;
+}
+
+#te1 {
+	top: 10vh;
+	left: 30vw;
+}
+
+#tb {
+	top: 10vh;
+	left: 40vw;
+}
+
+#td {
+	top: 30vh;
+	left: 30vw;
+}
+
+#te2 {
+	top: 40vh;
+	left: 45vw;
+	
+}
+
+#tv {
+	top: 30vh;
+	left: 55vw;	
+}
+
+#tr {
+	top: 60vh;
+	left: 37vw;
+}
+
+#te3 {
+	top: 62vh;
+	left: 50vw;	
+}
+
+#tm {
+	top: 60vh;
+	left: 62vw;
+}
+
+
+
+
+
+
+.sp1 {
+	font-size: 16em;
+	position: absolute;
+	color: white;
+	font-family: CF Three Dimensions Personal;
+	font-weight: bold;
+}
+
+.sp2 {
+	font-size: 10em;
+	position: absolute;
+	color: white;
+	font-family: CF Three Dimensions Personal;
+	font-weight: bold;	
+}
+
+.sp3 {
+	font-size: 5em;
+	position: absolute;	
+	color: white;
+	font-family: CF Three Dimensions Personal;
+	font-weight: bold;	
+}
+
+.stopEvent {
+    pointer-events: none;
+}
+
+
+/*-----------------------slide1-----------------------*/
+
+#sl1 {
+	display: flex;
+}
+
+#sl1Child {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+
+#asideLogo {
+	background-color: white;
+    border: 3px solid #f1f1f1;
+    border-radius: 4px;
+	margin: 5% 1%;
+	width: 10vw;
+	text-align:center;
+	padding: 1%;
+}
+
+#htmlLogo {
+	transition: 0.6s;
+	cursor: pointer;
+	margin: 8%;
+
+}
+
+.scale {
+	transform:scale(1.2,1.2);
+	
+}
+
+#cssLogo {
+	cursor: pointer;
+	transition: 0.6s;
+	margin: 8%;
+}
+
+#jsLogo {
+	cursor: pointer;
+	transition: 0.6s;
+	margin: 8%;
+}
+
+
+/* The browser window */
+
+.container {
+    border: 3px solid #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: white;
+	width: 70VW;
+}
+
+/* Container for columns and the top "toolbar" */
+.row {
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+}
+
+.left {
+  width: 15%;
+}
+
+.right {
+  width: 10%;
+}
+
+.middle {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+/* Page content */
+.content {
+	/*width:70%;
+	height: 70%;
+    padding: 0;*/
+
+}
+
+#html {
+	padding: 20px;
+}
+
+
+/* Header/logo Title */
+.head {
+  padding: 25px;
+  justify-content: space-around;
+  background: #7CB342;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Increase the font size of the heading */
+.head h2 {
+	text-align: center;
+    font-size: 40px;
+}
+
+
+/* Column container */
+.rows {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding : 0;
+  /*flex-direction: row-reverse;*/
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+	position: relative;
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #C5E1A5;
+  padding: 20px;
+  text-align: center;
+}
+
+#header {   
+	position: relative;
+}
+
+/* Main column */
+.main {   
+	position: relative;
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+/* Footer */
+.footer {
+	position: relative;
+  padding: 10px;
+  text-align: center;
+  background: #7CB342;
+  color: white;
+}
+
+ul {
+  list-style: none; /* Remove HTML bullets */
+  padding: 0;
+  margin: 0;
+}
+
+ul li { 
+  padding-left: 16px; 
+}
+
+ul li::before {
+  content: "•"; /* Insert content that looks like bullets */
+  padding-right: 8px;
+  color: #7CB342;
+}
+
+.compFooter{
+  width: 100%;
+  background-color: #C5E1A5;
+  min-height : 40px;
+  text-align: center;
+
+
+}
+
+#comp {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  height: 100%;
+ }
+
+.comp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding: 20px;
+}
+
+.fadeOut {
+    animation: fade-out 6s forwards;
+    -moz-animation: fade-out 6s forwards;
+    -webkit-animation: fade-out 6s forwards;
+    -o-animation: fade-out 6s forwards;
+	transition-timing-function: ;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+
+.rotate {
+    animation: rotate-360 2s forwards;
+    -moz-animation: rotate-360 2s forwards;
+    -webkit-animation: rotate-360 2s forwards;
+    -o-animation: rotate-360 2s forwards;
+	transition-timing-function: ease-in;
+}
+
+@keyframes rotate-360 {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(355deg); 
+    }
+}
+
+/*
+#comp2 {
+	background-color:#ff9999;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px;
+	border: 3px solid red ;	
+}
+
+#comp3 {
+	color: blue ;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px;
+	border: 3px solid blue ;
+}
+
+#comp4 {
+	color: yellow ;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px;	
+	border: 3px solid yellow ;
+}
+
+#comp5 {
+	color: purple ;
+	border-radius: 15px;
+	text-align: center;
+	padding: 20px;
+	border: 3px solid purple 
+}
+
+#comp6 {
+	color: orange ;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px;
+	border: 3px solid orange ;
+}
+
+#comp7 {
+	background-color:#ff9999;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px;	
+	border: 3px solid grey ;
+}
+*/
+
+/*
+.main {
+
+	width: 66%;
+}
+
+.pic {
+
+	width: 34%;
+	background-color: teal;
+}
+
+#aside {
+	width: 33%;	
+}
+
+
+#cssClick {
+
+}
+
+.header {
+	background-color: teal;
+	color: white;
+	width: 66%;
+	margin: 0;
+	padding: 5%;
+}
+
+.title {
+	margin: 0;
+	padding-top: 1vh;
+	color: red;
+	font-size: 1.3em;
+}
+
+.dev {
+	font-size: 1.5em;
+}
+
+.html5 {
+	color:red;
+}
+
+.css3 {
+	color:blue;
+}
+*/
+
+#cont1 {
+	margin: 5% 1%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#colorBox, #colorBox2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	list-style: none;
+	cursor: pointer;	
+}
+
+#colorBox li, #colorBox2 li { 
+  padding-left: 16px; 
+  padding-right: 16px;
+    text-align: left;
+}
+
+#colorBox li::before, #colorBox2 li::before  {
+  content: "•";
+  font-size: 4em;
+  padding-right: 8px;
+  line-height: 0.5em;
+  vertical-align: -50%;
+}
+
+#colorBox li:nth-child(1)::before {
+  color: #7cb342;
+}
+
+#colorBox li:nth-child(2)::before {
+  color: #546e7a;
+}
+
+#colorBox li:nth-child(3)::before {
+  color: #00897b;
+}
+
+#colorBox li:nth-child(4)::before {
+  color: #f4511e;
+}
+#colorBox li:nth-child(5)::before {
+  color: #1e88e5;
+}
+
+#colorBox li:nth-child(6)::before {
+  color: #ffffff;
+}
+
+#colorBox2 li:nth-child(1)::before {
+  color: #C5E1A5;
+}
+
+#colorBox2 li:nth-child(2)::before {
+  color: #90A4AE;
+}
+
+#colorBox2 li:nth-child(3)::before {
+  color: #4DB6AC;
+}
+
+#colorBox2 li:nth-child(4)::before {
+  color: #FF8A65;
+}
+#colorBox2 li:nth-child(5)::before {
+  color: #64B5F6;
+}
+
+#colorBox2 li:nth-child(6)::before {
+  color: #ffffff;
+}
+
+/*-----------------------slide2-----------------------*/
+
+#mvotd {
+	width:100%;
+	cursor: pointer;
+}
+
+/*------------alt js style-------------*/
+
+.head1 {
+  padding: 25px;
+  text-align: center;
+  background: #546E7A;
+  color: white;
+}
+
+.head2 {
+  padding: 25px;
+  text-align: center;
+  background: #00897B;
+  color: white;
+}
+
+.head3 {
+  padding: 25px;
+  text-align: center;
+  background: #F4511E;
+  color: white;
+}
+
+.head4 {
+  padding: 25px;
+  text-align: center;
+  background: #1E88E5;
+  color: white;
+}
+
+.footer1 {
+  padding: 10px;
+  text-align: center;
+  background: #546E7A;
+  color: white;
+}
+
+.footer2 {
+  padding: 10px;
+  text-align: center;
+  background: #00897B;
+  color: white;
+}
+
+.footer3 {
+  padding: 10px;
+  text-align: center;
+  background: #F4511E; 
+  color: white;
+}
+
+.footer4 {
+  padding: 10px;
+  text-align: center;
+  background: #1E88E5; 
+  color: white;
+}
+
+.side1 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #90A4AE;
+  padding: 20px;
+}
+
+.side2 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #4DB6AC;
+  padding: 20px;
+}
+
+.side3 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #FF8A65;
+  padding: 20px;
+}
+
+.side4 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #64B5F6;
+  padding: 20px;
+}
+
+.comp1 {
+  width: 100%;
+  background-color: #90A4AE;
+  text-align: center;
+}
+
+.comp2 {
+  width: 100%;
+  background-color: #4DB6AC;
+  text-align: center;
+}
+
+.comp3 {
+  width: 100%;
+  background-color: #FF8A65;
+  text-align: center;
+}
+
+.comp4 {
+  width: 100%;
+  background-color: #64B5F6;
+  text-align: center;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+
