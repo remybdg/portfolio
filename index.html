@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="onloadBody()">
-	
-	
-	
-		<a id="prev" onclick="onclickPrev()">&#10094;</a>
-		<a id="next" onclick="onclickNext()">&#10095;</a>		
-	<div id="cont">
+	<!-- <a id="prev" class="hidden" onclick="onclickPrev()">&#10094;</a>
+	<a id="next" onclick="onclickNext()">&#10095;</a> -->
 
+	<div id="skipBtn" onclick="introSkip()">
+		Passer l intro
+	</div>
+	<div id="cont" onscroll="onscrollBody(event)">
 
 		<div class="slide" id=sl0 onmouseenter="getCoor(event)" onmousemove="showCoords(event)">
-	
-			<h1 class="hidden">Web&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;Dev</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rem </h1>
-
+			
+			<!-- <h1 id="finalTitle" class="hidden">Web&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;Dev<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rem </h1> -->
 
 			<span id="a" class="lettre sp1">w</span>
 			<span id="b" class="lettre sp1">e</span>
@@ -69,218 +68,502 @@
 			<span id="uu" class="lettre sp3">w</span>
 			<span id="vv" class="lettre sp3">d</span>
 			<span id="ww" class="lettre sp3">r</span>
-			<span id="zz" class="lettre sp3">e</span>	
+			<span id="zz" class="lettre sp3">e</span>
 			
+
 			<div id="tw" class="lettreTitre sp1">w</div>		
 			<div id="te1" class="lettreTitre sp2">e</div>
-			<div id="tb" class="lettreTitre sp1">b</div>
-			<div id="td" class="lettreTitre sp1">d</div>
-			<div id="te2" class="lettreTitre sp2">e</div>	
+			<div id="tb" class="lettreTitre sp3">b</div>
+
+			<div id="td" class="lettreTitre sp2">d</div>
+			<div id="te2" class="lettreTitre sp3">e</div>	
 			<div id="tv" class="lettreTitre sp1">v</div>
-			<div id="tr" class="lettreTitre sp1">r</div>
-			<div id="te3" class="lettreTitre sp2">e</div>
-			<div id="tm" class="lettreTitre sp1">m</div>	
-		
+
+
+			<div id="tr" class="lettreTitre sp3">r</div>
+			<div id="te3" class="lettreTitre sp1">e</div>
+			<div id="tm" class="lettreTitre sp2">m</div>	
+
 
 		</div>
 		
+		<div id="finalTitle" class="hidden">
+			<div id="finalTitleContainer">
+				<img src="wdrLogo.png">
+			</div>
+		</div>		
 		
 		
-		
-		
-		
-		
-		<div class="slide" id=sl1>
-			<div id=sl1Child>
-				<div id="asideLogo">
+		<div id="nav" class="hidden">
+				<div class="row">
+					<div class="column left">
+						<span class="dot" style="background:#ED594A;"></span>
+						<span class="dot" style="background:#FDD800;"></span>
+						<span class="dot" style="background:#5AC05A;"></span>
+					</div>
+					<div class="column middle">
+						<input type="text" id="adressBar" value="http://www.WebDevRem.fr/Navigation" data-elt="nav" onclick="onclickAdressBar(event)">
 
-					<img src="html5.png" id="htmlLogo" class="clickme" width="60%" onclick="typeWriter()">
+						<ul id="navList" class="navlist hidden" onclick="onclickNavList(event)">
+							<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+							<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+							<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+							<li data-elt="pbc">https://publicom.design/</li>
+							<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+							<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+						</ul>
 
-					<img src="css3.png" id="cssLogo" class="hidden" width="60%" >									
-				
-					<img src="js.png" id="jsLogo" class="hidden" width="60%" onclick="onclickJs()">									
-
-				</div>
-
-				<div class="container" id="cont1" onclick="typeWriter()">
-					<div class="row">
-						<div class="column left">
-							<span class="dot" style="background:#ED594A;"></span>
-							<span class="dot" style="background:#FDD800;"></span>
-							<span class="dot" style="background:#5AC05A;"></span>
-						</div>
-						<div class="column middle">
-							<input type="text" value="http://www.WebDevRem.fr">
-						</div>
-						<div class="column right">
-							<div style="float:right">
-								<span class="bar"></span>
-								<span class="bar"></span>
-								<span class="bar"></span>
-							</div>
+					</div>
+					<div class="column right">
+						<div style="float:right">
+								<span id="arrow" class="arrow" data-elt="adressBar" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
 						</div>
 					</div>
+				</div>
+				<div id="mobileNavTopView">
 
-					<div class="content">
-						<p id="html"></p>
+				</div>
+				<div id="navCont">
+					<div id="navPresentation" class="navCat" onclick="onclickNavPres()">
+							Presentation
+							
+					</div>
+					<div id="navPresCont" class="" onclick="">
+						<div id="html"></div>
 						<div id="before" class="hidden">
 						voici mon <span id="ptflo">portfolio</span> ou je vais vous détailler mes compétences. </br>
-
+		
 								Comme vous le constatez je maitrise le <span id="html5">html5</span> <span id="smiley"> :)</span> </br>
-
+		
 								Mais ce n'est pas tout, je maitrise aussi le <span id="css3">css3</span>,
-
+		
 								clickez sur le logo pour voir ca!
 						</div>
-						<div >
-							<div id="header" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)" >
-								<div>
-								  <h2><span id="bonjour">Bonjour, je suis </span>Remy B.</h2>
-								  <h2>Développeur Web Junior<h2>
-								</div>
-							</div>
-							<h3 id="main1" class="hidden">Actuellement en formation  professionnelle qualifiante</h3>
-							<h5 id="main2" class="hidden">Greta Aix en Provence 2019-2020</h5>
-							
-								<p id="main3" class="hidden">Concevoir et développer une application web</p>
-								<p id="main4" class="hidden">Comprendre et formaliser les demandes d'un client</p>
-								<p id="main5" class="hidden">Rédaction d'un cahier des charges</p>
-								<p id="main6" class="hidden">Réalisation d'une maquette (Adobe XD)</p>
-								<p id="main7" class="hidden">Intégration HTML et CSS, design responsive</p>
-								<p id="main8" class="hidden">Dynamiser un site (JavaScript)</p>
-								<p id="main9" class="hidden">Communication avec un serveur (PHP)</p>
-								<p id="main10" class="hidden">Gérer le contenu d'une base de données</p>
-								
+						
+						<img src="html5.png" id="htmlLogo" class=" icon" width="30%" onclick="typeWriter()">
 
-
-
-							<div class="rows">
-							  <div id="side" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)">
-								<img src="avatar.png" id="avatar" draggable="false" ondragstart="drag(event)" width="200" height="200">
-								<p id="quote">oh vous etes là , je ne vous avez pas vu !</p>
-								
-							  </div>
-							  <div id="main" class="hidden">
-								<h3>Actuellement en formation  professionnelle qualifiante</h3>
-								<h5>Greta d'Aix en Provence 2019-2020</h5>
-								<ul>
-									<li>Concevoir et développer une application web</li>
-									<li>Comprendre et formaliser les demandes d'un client</li>
-									<li>Rédaction d'un cahier des charges</li>
-									<li>Réalisation d'une maquette (Adobe XD)</li>
-									<li>Intégration HTML et CSS, design responsive</li>
-									<li>Dynamiser un site (JavaScript)</li>
-									<li>Communication avec un serveur (PHP)</li>
-									<li>Gérer le contenu d'une base de données</li>
-								</ul>
-								<br>
-							  </div>
-							</div>
-							<div id="compFooter" ondrop="drop(event)" ondragover="allowDrop(event)">
-								<h3 id="compe1" class="hidden">Compétences</h3>
-								<div id="comp" draggable="false" ondragstart="drag(event)">
-									<span id="compe2" class="hidden" class="comp">Html5</span>
-									<span id="compe3" class="hidden" class="comp">Css3</span>
-									<span id="compe4" class="hidden" class="comp">JavaScript</span>
-									<span id="compe5" class="hidden" class="comp">PHP</span>
-									<span id="compe6" class="hidden" class="comp">MySql</span>
-									<span id="compe7" class="hidden" class="comp">Wordpress</span>	
-								</div>
-							</div>																				
-
-							<div id="footer" class="hidden">
-								<h3>@WebDevRem</h3>
-							</div>
-						</div>
-					<!--
-
-						<p id="html"></p>
-						<div class="hidden" id="css">
-							<div id="main">
-								voici mon <span id="ptflo">portfolio</span> ou je vais vous détailler mes compétences. </br>
-
-								Comme vous le constatez je maitrise le <span id="html5">html5</span> <span id="smiley"> :)</span> </br>
-
-								Mais ce n'est pas tout, je maitrise aussi le <span id="css3">css3</span>,
-
-								clickez sur le logo pour voir ca!
-														
-									<div class="hidden" id="pic">
-										<img src="avatar.png" id="avatar" width="200" height="200">
-									</div>
-									<div id="header">
-										<p id="title">Bonjour, je suis Remy B. </p>
-										<p id="dev">Developpeur Web Junior</p>
-									</div>
-
-							</div>
-						</div>
-					-->
-					</div>
-					<ul id="colorBox" class="hidden">
-						<li id="#7CB342" onclick="colorChoice(event)">#7CB342</li>
-						<li id="#546E7A" onclick="colorChoice(event)">#546E7A</li>
-						<li id="#00897B" onclick="colorChoice(event)">#00897B</li>
-						<li id="#F4511E" onclick="colorChoice(event)">#F4511E</li>
-						<li id="#1E88E5" onclick="colorChoice(event)">#1E88E5</li>
-						<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
-					<ul>
+						<img src="css3.png" id="cssLogo" class="hidden icon" width="30%" >									
 					
-					<ul id="colorBox2" class="hidden">
-						<li id="#C5E1A5" onclick="colorChoice(event)">#C5E1A5</li>
-						<li id="#90A4AE" onclick="colorChoice(event)">#7CB342</li>
-						<li id="#4DB6AC" onclick="colorChoice(event)">#4DB6AC</li>
-						<li id="#FF8A65" onclick="colorChoice(event)">#FF8A65</li>
-						<li id="#64B5F6" onclick="colorChoice(event)">#64B5F6</li>
-						<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
-					<ul>					
+						<img src="js.png" id="jsLogo" class="hidden icon" width="30%" onclick="onclickJs()">	
+
+						<img src="print.png" id="printLogo" class="hidden icon" width="30%" onclick="onclickPrint()">	
+
+
+					</div>
+
+					<div id="navProjets" class="navCat" onclick="onclickNavProj()">
+						Projets
+						
+					</div>
+					<div id="navProjetsCont">
+					
+						<div id="navMvotd" class="navProjCat" onclick="onclickNavMvotd()">
+							<img src="mvotd.png" >
+							
+						</div>
+						<div id="navPublicomDesign" class="navProjCat" onclick="onclickNavPbcDesign()">
+							<img src="pbcDesign.png" >
+						</div>
+						<div id="navSbjs" class="navProjCat" onclick="onclickNavSbjs()">
+							<img src="sandbox.png" >
+						</div>
+					</div>
+					<div id="navContact" class="navCat" onclick="onclickNavCont()">
+						Contact
+					</div>
+						
 				</div>
 			</div>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div class="slide" id=sl2>
-			<div class="container">
-					<div class="row">
-						<div class="column left">
-							<span class="dot" style="background:#ED594A;"></span>
-							<span class="dot" style="background:#FDD800;"></span>
-							<span class="dot" style="background:#5AC05A;"></span>
+
+
+
+			<div id="mobMainCont" class="hidden">
+				<div id="mobWindow">
+
+					<div id="mobAccordeon" class="hidden" onclick="onclickMobAccordeon(event)">
+						<img src="mvotd.png" id="mobMvotd">
+						<div data-id="mobMvotd" class="overlay hidden">
+							<h2>VIDEO OF THE DAY</h2> 
+							<p>go</p>
+							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobMvotd">&#10006</p>
+
 						</div>
-						<div class="column middle">
-							<input type="text" value="http://www.WebDevRem.fr/MVOTD">
+						<img src="pbcDesign.png" id="mobPbc">
+						<div data-id="mobPbc" class="overlay hidden">
+							<h2>VIDEO OF THE DAY</h2> 
+							<p>go</p>
+							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobPbc">&#10006</p>
+							
 						</div>
-						<div class="column right">
-							<div style="float:right">
-								<span class="bar"></span>
-								<span class="bar"></span>
-								<span class="bar"></span>
+						<img src="sandbox.png" id="mobSandbox">
+						<div data-id="mobSandbox" class="overlay hidden">
+							<h2>VIDEO OF THE DAY</h2> 
+							<p>go</p>
+							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSandbox">&#10006</p>
+							
+						</div>
+						<img src="pbcDesign.png" id="mobSat">
+						<div data-id="mobSat" class="overlay hidden">
+							<h2>VIDEO OF THE DAY</h2> 
+							<p>go</p>
+							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSat">&#10006</p>
+
+						</div>
+					</div>		
+				</div>		
+						
+				<div id="mobNav" class="hidden" onclick="onclickMobNav(event)">
+
+					<div id="mobPres" class="mobNavCat" onclick="">
+						presentation
+					</div>
+					<div id="mobProj" class="mobNavCat" onclick="">
+						projets
+					</div>
+					<div id="mobCont" class="mobNavCat" onclick="">
+						contact
+					</div>
+				</div>			
+				
+			</div>
+			<div id="slideCont">	
+					<div class="container slideout window" id="cont1" onclick="typeWriter()">
+						<div id="printAdrBar" class="row">
+							<div class="column left">
+								<span class="dot" style="background:#ED594A;"></span>
+								<span class="dot" style="background:#FDD800;"></span>
+								<span class="dot" style="background:#5AC05A;"></span>
+							</div>
+							<div class="column middle">
+								<input id="adressBarPres" type="text" value="http://www.WebDevRem.fr/Présentation" data-elt="pres" onclick="onclickAdressBar(event)">
+								<ul id="navListPres" class="navlist hidden" onclick="onclickNavList(event)">
+									<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+									<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+									<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+									<li data-elt="pbc">https://publicom.design/</li>
+									<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+									<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+								</ul>
+							</div>
+							<div class="column right">
+								<div style="float:right">
+									<span id="arrowPres" class="arrow" data-elt="adressBarPres" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+								</div>
 							</div>
 						</div>
-					</div>
-
-					<div class="content">
-							<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank"><img src="mvotd.png" id="mvotd" ></a>
+	
+						<div class="content">
+	
+							<div >
+								<div id="header" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)" >
+									<div id="headerDrag" class="draggableElt"  draggable="false" ondragstart="drag(event)" >
+									<h2 id="mainName"><span id="bonjour">Bonjour, je suis </span>Remy B.</h2>
+									<h2 id="fullName" class="hidden printInfo">Remy BOISDANGHIEN</h2>
+									<h3 id="devTitle">Développeur Web Junior</h3>
+									<h3 class="hidden printInfo">remyb@live.com</h3>
+									<h3 class="hidden printInfo">06 02 13 66 74</h3>
+									</div>
+								</div>
+								<h3 id="main1" class="hidden">Actuellement en formation  professionnelle qualifiante</h3>
+								<h5 id="main2" class="hidden">Greta Aix en Provence 2019-2020</h5>
 								
+									<p id="main3" class="hidden">Concevoir et développer une application web</p>
+									<p id="main4" class="hidden">Comprendre et formaliser les demandes d'un client</p>
+									<p id="main5" class="hidden">Rédaction d'un cahier des charges</p>
+									<p id="main6" class="hidden">Réalisation d'une maquette (Adobe XD)</p>
+									<p id="main7" class="hidden">Intégration HTML et CSS, design responsive</p>
+									<p id="main8" class="hidden">Dynamiser un site (JavaScript)</p>
+									<p id="main9" class="hidden">Communication avec un serveur (PHP)</p>
+									<p id="main10" class="hidden">Gérer le contenu d'une base de données</p>
+									
+	
+	
+	
+								<div class="rows">
+								<div id="side" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<img src="avatar.png" id="avatar" class="draggableElt" draggable="false" ondragstart="drag(event)" width="200" height="200">
+									<p id="quote">oh vous etes là , je ne vous avez pas vu !</p>
+									
+								</div>
+								<div id="main"  ondrop="drop(event)" ondragover="allowDrop(event)" class="hidden">
+									<div id="mainDrag" class="draggableElt"  draggable="false" ondragstart="drag(event)"> 
+										<h3>Actuellement en formation  professionnelle qualifiante</h3>
+										<h5>Greta d'Aix en Provence 2019-2020</h5>
+										<ul>
+											<li>Concevoir et développer une application web</li>
+											<li>Comprendre et formaliser les demandes d'un client</li>
+											<li>Rédaction d'un cahier des charges</li>
+											<li>Réalisation d'une maquette (Adobe XD)</li>
+											<li>Intégration HTML et CSS, design responsive</li>
+											<li>Dynamiser un site (JavaScript)</li>
+											<li>Communication avec un serveur (PHP)</li>
+											<li>Gérer le contenu d'une base de données</li>
+										</ul>
+										<br>
+									</div>	
+								</div>
+								</div>
+								<div id="compFooter" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<h3 id="compe1" class="hidden">Compétences</h3>
+									<div id="comp"  class="draggableElt" draggable="false" ondragstart="drag(event)">
+										<span id="compe2" class="hidden comp">Html5</span>
+										<span id="compe3" class="hidden comp">Css3</span>
+										<span id="compe4" class="hidden comp">JavaScript</span>
+										<span id="compe5" class="hidden comp">PHP</span>
+										<span id="compe6" class="hidden comp">MySql</span>
+										<span id="compe7" class="hidden comp">Wordpress</span>	
+									</div>
+								</div>																				
+	
+								<div id="footer"  ondrop="drop(event)" ondragover="allowDrop(event)" class="hidden">
+									<h3 id="footerDrag" class="draggableElt" draggable="false" ondragstart="drag(event)" >@WebDevRem</h3>
+								</div>
+								
+							</div>
+						<!--
+	
+							<p id="html"></p>
+							<div class="hidden" id="css">
+								<div id="main">
+									voici mon <span id="ptflo">portfolio</span> ou je vais vous détailler mes compétences. </br>
+	
+									Comme vous le constatez je maitrise le <span id="html5">html5</span> <span id="smiley"> :)</span> </br>
+	
+									Mais ce n'est pas tout, je maitrise aussi le <span id="css3">css3</span>,
+	
+									clickez sur le logo pour voir ca!
+															
+										<div class="hidden" id="pic">
+											<img src="avatar.png" id="avatar" width="200" height="200">
+										</div>
+										<div id="header">
+											<p id="title">Bonjour, je suis Remy B. </p>
+											<p id="dev">Developpeur Web Junior</p>
+										</div>
+	
+								</div>
+							</div>
+						-->
+						</div>
+						<ul id="colorBox" class="colorBoxTop hidden">
+							<li id="#7CB342" onclick="colorChoice(event)">#7CB342</li>
+							<li id="#546E7A" onclick="colorChoice(event)">#546E7A</li>
+							<li id="#00897B" onclick="colorChoice(event)">#00897B</li>
+							<li id="#F4511E" onclick="colorChoice(event)">#F4511E</li>
+							<li id="#1E88E5" onclick="colorChoice(event)">#1E88E5</li>
+							<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
+						</ul>
+						
+						<ul id="colorBox2" class="colorBoxTop hidden">
+							<li id="#C5E1A5" onclick="colorChoice(event)">#C5E1A5</li>
+							<li id="#90A4AE" onclick="colorChoice(event)">#7CB342</li>
+							<li id="#4DB6AC" onclick="colorChoice(event)">#4DB6AC</li>
+							<li id="#FF8A65" onclick="colorChoice(event)">#FF8A65</li>
+							<li id="#64B5F6" onclick="colorChoice(event)">#64B5F6</li>
+							<li id="#FFFFFF" onclick="colorChoice(event)">#FFFFFF</li>
+						</ul>					
 					</div>
+	
+				
+				
+				
+				
+				
+				
+				
+	
+					<div class="container slideout window" id="cont2">
+							<div class="row">
+								<div class="column left">
+									<span class="dot" style="background:#ED594A;"></span>
+									<span class="dot" style="background:#FDD800;"></span>
+									<span class="dot" style="background:#5AC05A;"></span>
+								</div>
+								<div class="column middle">
+									<input id="adressBarMvotd" type="text" value="http://www.WebDevRem.fr/MVOTD" data-elt="mvotd" onclick="onclickAdressBar(event)">
+									<ul id="navListMvotd" class="navlist hidden" onclick="onclickNavList(event)">
+										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+										<li data-elt="pbc">https://publicom.design/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+									</ul>
+								</div>
+								<div class="column right">
+									<div style="float:right">
+										<span id="arrowMvotd" class="arrow" data-elt="adressBarMvotd" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									</div>
+								</div>
+							</div>
+	
+							<div class="content">
+									<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="mvotd"><img src="mvotd.png" ></a>
+										
+							</div>
+					</div>
+					
+					<div class="container slideout window" id="cont3">
+							<div class="row">
+								<div class="column left">
+									<span class="dot" style="background:#ED594A;"></span>
+									<span class="dot" style="background:#FDD800;"></span>
+									<span class="dot" style="background:#5AC05A;"></span>
+								</div>
+								<div class="column middle">
+									<input id="adressBarPbc" type="text" value="https://publicom.design/" data-elt="pbc" onclick="onclickAdressBar(event)">
+									<ul id="navListPbc" class="navlist hidden" onclick="onclickNavList(event)">
+										<li data-elt="pbc">https://publicom.design/</li>
+										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+									</ul>
+								</div>
+								<div class="column right">
+									<div style="float:right">
+										<span id="arrowPbc" class="arrow" data-elt="adressBarPbc" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									</div>
+								</div>
+							</div>
+	
+							<div class="content">
+								<a href="https://publicom.design/" target="_blank" id="pbcDesign"><img src="pbcDesign.png" ></a>
+										
+							</div>
+					</div>
+	
+					<div class="container slideout window" id="cont4">
+						<div class="row">
+							<div class="column left">
+								<span class="dot" style="background:#ED594A;"></span>
+								<span class="dot" style="background:#FDD800;"></span>
+								<span class="dot" style="background:#5AC05A;"></span>
+							</div>
+							<div class="column middle">
+								<input id="adressBarSbjs" type="text" value="http://www.WebDevRem.fr/sandboxJS/" data-elt="sbjs" onclick="onclickAdressBar(event)">
+								<ul id="navListSbjs" class="navlist hidden" onclick="onclickNavList(event)">
+									<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+									<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+									<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+									<li data-elt="pbc">https://publicom.design/</li>
+									<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+								</ul>
+							</div>
+							<div class="column right">
+								<div style="float:right">
+									<span id="arrowSbjs" class="arrow" data-elt="adressBarSbjs" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+								</div>
+							</div>
+						</div>
+	
+						<div class="content">	
+								<a href="https://publicom.design/" target="_blank" id="sandbox"><img src="sandbox.png" ></a>
+					
+						</div>
+					</div>
+					
+					<div class="container slideout window" id="cont404">
+							<div class="row">
+								<div class="column left">
+									<span class="dot" style="background:#ED594A;"></span>
+									<span class="dot" style="background:#FDD800;"></span>
+									<span class="dot" style="background:#5AC05A;"></span>
+								</div>
+								<div class="column middle">
+									<input id="adressBar404" type="text" value="" data-elt="404" onclick="onclickAdressBar(event)">
+									<ul id="navList404" class="navlist hidden" onclick="onclickNavList(event)">
+										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+										<li data-elt="pbc">https://publicom.design/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+									</ul>
+								</div>
+								<div class="column right">
+									<div style="float:right">
+										<span id="arrow404" class="arrow"  data-elt="adressBar404" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									</div>
+								</div>
+							</div>
+	
+							<div class="content">
+									<img src="404.png" >
+										
+							</div>
+					</div>
+					<div class="container slideout window" id="contact">
+							<div class="row">
+								<div class="column left">
+									<span class="dot" style="background:#ED594A;"></span>
+									<span class="dot" style="background:#FDD800;"></span>
+									<span class="dot" style="background:#5AC05A;"></span>
+								</div>
+								<div class="column middle">
+									<input id="adressBarCont" type="text"  value="http://www.WebDevRem.fr/Contact" data-elt="cont" onclick="onclickAdressBar(event)">
+									<ul id="navListcont" class="navlist hidden" onclick="onclickNavList(event)">
+										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+										<li data-elt="pbc">https://publicom.design/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+									</ul>
+								</div>
+								<div class="column right">
+									<div style="float:right">
+										<span id="arrowCont" class="arrow"  data-elt="adressBarCont" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									</div>
+								</div>
+							</div>
+	
+							<div class="content">
+								<img src="404.png" >
+										
+							</div>
+					</div>
+					<div class="flip-card hidden">
+						<div class="flip-card-inner" id="inner">
+							<div class="flip-card-front">
+								<div id="contact" class="cardInnerDiv">Contact</div>
+								<div class="cardInnerDiv"></div>
+								<div class="cardInnerDiv"></div>
+								<div id="commentaire" class="cardInnerDiv">Commentaire</div>
+							</div>
+							<div id="cardBack" class="flip-card-back">
+							<div id="contactBack" class="back hidden">Contact form</div>
+							<div id="commentaireBack" class="back hidden">Commentaire form</div>
+							<div id="backButton">back</div>
+							</div>
+						</div>
+					</div> 
+				</div>
+		
+	
+
+		
+		
+		
+		<!-- <div id ="menu" class="hidden">
+			<div id="menuMinicv" class="menuFirst">MINICV</div>
+			<div id="menuProjets" class="menuFirst">PROJETS
+				<div id="menuMvotd"></div>
+				<div id="menuPublicomdesign"></div>
+				
 			</div>
-											
-		</div>		
-		<div class="slide" id=sl3>
-		
+			<div id="menuContact" class="menuFirst">CONTACT</div>
 		</div>
-		<div class="slide" id=sl4>
-		</div>	
-		
-		
 
-
+	
+		<div id="menuIcon" class="hidden2" onclick="onclickMenu()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>	 -->
 	</div>
+
 	<script src="main.js"></script>
 </body>
 </html> 

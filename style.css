@@ -3,30 +3,41 @@ html {
 }
 
 body {
+  display: flex;
 	position: relative;	
-	height:100vh;
+  height:100vh;
 	margin: 0;
 	overflow-y:hidden;
-	/*overflow-x:hidden;*/
+  overflow-x:hidden;
+  font-family: Roboto;
 }
 
 
 /* conteneur principal */
 #cont {
 	display: flex;
-	position: relative;
+  position: relative;
+  max-width: 2000px;
+  margin: auto;
 	height:100vh;
-	width:600vw;
-    background-image: linear-gradient(to right, #3217e5, #0067ff, #008bf5, #00a5d1, #00b9b4, #07bb94, #4ab968, #7ab434, #9a9c00, #b67f00, #cc5b00, #da2018);
+	width:100vw;
+  /* background-image: linear-gradient(to right, #3217e5, #0067ff, #008bf5, #00a5d1, #00b9b4, #07bb94, #4ab968, #7ab434, #abad09, #b67f00, #cc5b00, #da2018); */
+  background-image: linear-gradient(to right bottom, #0f1339, #121548, #171757, #1e1865, #271874, #2e1981, #361a8d, #3e1b9a, #431fa9, #4824b8, #4d28c8, #522dd8);
 }
+  
 
 .slide {
 	position: relative;
 	height:100vh;
 	width:100vw;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#maxCont {
+  position: absolute;
+
 }
 
 
@@ -85,6 +96,40 @@ body {
 
 /*-----------------------slide0-----------------------*/
 
+#finalTitle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+#finalTitleContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+#finalTitle img{
+  margin: auto;
+  height: 70%;
+
+}
+
+#skipBtn {
+  color:  #fff;
+  position: absolute;
+  left: 1vw;
+  top: 1vw;
+  cursor: pointer; 
+  z-index: 2;
+  font-family: CF Three Dimensions Personal;
+  font-size:.9em;
+  text-align: center;
+}
+
 @font-face {
     font-family: 'CF Three Dimensions Personal';
     src: url('fonts/CFThreeDimensionsPersonal-Reg.eot');
@@ -115,13 +160,15 @@ h1 {
 	font-size: 16em;
 	line-height: 0.9em;
 	-ms-transform: rotate(-20deg); /* IE 9 */
-    -webkit-transform: rotate(-20deg); /* Safari 3-8 */
-    transform: rotate(-20deg);
-	margin: auto;
+  -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+  transform: rotate(-20deg);
+	/* margin: auto; */
 	text-align: center;
 	vertical-align: center;
-	position: absolute;
+  position: absolute;
+  transition: margin-left 1s;
 }
+
 
 #tw {
 	top: 8vh;
@@ -175,19 +222,17 @@ h1 {
 
 
 .sp1 {
-	font-size: 16em;
+	font-size: 12em;
 	position: absolute;
 	color: white;
 	font-family: CF Three Dimensions Personal;
-	font-weight: bold;
 }
 
 .sp2 {
-	font-size: 10em;
+	font-size: 8em;
 	position: absolute;
 	color: white;
 	font-family: CF Three Dimensions Personal;
-	font-weight: bold;	
 }
 
 .sp3 {
@@ -195,7 +240,6 @@ h1 {
 	position: absolute;	
 	color: white;
 	font-family: CF Three Dimensions Personal;
-	font-weight: bold;	
 }
 
 .stopEvent {
@@ -203,19 +247,154 @@ h1 {
 }
 
 
+/*-----------------------Navigation-----------------------*/
+
+#nav {
+  position: absolute;
+  /* height: 80vh; */
+  width: 23vw;
+  left: 4vw;
+  top: 10vh;
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #fff;
+  /* opacity: 0; */
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fadein {
+  animation: fadein 2s;
+}
+
+#navContact {
+  background-color: orangered;
+}
+#navPresentation {
+  background-color: yellowgreen;
+}
+
+#navProjets {
+  background-color: darkslateblue;
+}
+
+.navCat {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5%;
+  font-family: CF Three Dimensions Personal;
+  color: white;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#navPresCont {
+  max-height: 0px;
+  /* background-color: rgb(191, 214, 145); */
+  transition: max-height .5s linear;
+  overflow-y: hidden;
+  border-bottom: 5px solid yellowgreen;
+  border-left: 5px solid yellowgreen;
+  border-right: 5px solid yellowgreen;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ #navMvotd.expanded, #navPublicomDesign.expanded, #navSbjs.expanded  {
+  max-height: 500px;
+}
+#navPresCont.expanded {
+  max-height: 500px;
+  /* min-height: 499px; */
+}
+
+#navMvotd, #navPublicomDesign, #navSbjs {
+  max-height: 0px;
+  width: 100%;
+  background-color: slateblue;
+  transition: max-height .5s linear;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+.navProjCat img {
+  width: 100%;
+}
+
+.arrow {
+  color: rgb(90, 90, 90);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.navlist {
+  position: absolute;
+  list-style-type: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: .9rem;
+  transition: .5s;
+  z-index: 5;
+}
+
+.navlist li {
+  padding-left: .5rem ;
+  cursor: pointer;
+}
+
+.navlist li:hover {
+  color: #000 ;
+}
+
+input {
+  cursor: pointer;
+   
+ }
+
+ #mobileNavTopView {
+   display: none
+ }
+
+ #navProjetsCont {
+  max-height: 500px;
+  overflow: auto;
+}
+
 /*-----------------------slide1-----------------------*/
 
 #sl1 {
-	display: flex;
+	display: none;
 }
 
 #sl1Child {
-	display: flex;
+  display: flex;
+  justify-content: flex-start;
 	width: 100%;
-	height: 100%;
-	justify-content: center;
+  height: 100%;
+  padding-left: 5vw;
 }
 
+#cont1 {
+	/* margin: 5% 1%; */
+	overflow-y: scroll;
+  overflow-x: hidden;
+  /* width: 60vw; */
+  transition: 1s;
+  transform-origin: 110% -10%;
+}
+
+.slideout {
+  transform: rotate(90deg);
+  transition: 1s;
+}
 
 #asideLogo {
 	background-color: white;
@@ -227,39 +406,29 @@ h1 {
 	padding: 1%;
 }
 
-#htmlLogo {
-	transition: 0.6s;
-	cursor: pointer;
-	margin: 8%;
-
+.icon {
+  transition: 0.6s;
+  margin: 5%;
 }
 
 .scale {
-	transform:scale(1.2,1.2);
+  transform:scale(1.2,1.2);
 	
-}
-
-#cssLogo {
-	cursor: pointer;
-	transition: 0.6s;
-	margin: 8%;
-}
-
-#jsLogo {
-	cursor: pointer;
-	transition: 0.6s;
-	margin: 8%;
 }
 
 
 /* The browser window */
 
 .container {
-    border: 3px solid #f1f1f1;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    background-color: white;
-	width: 70VW;
+  position: absolute;
+  top: 10vh;
+  right: 4vw;
+  width: 65vw;
+  height: 80vh;
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #fff;
 }
 
 /* Container for columns and the top "toolbar" */
@@ -274,7 +443,7 @@ h1 {
 }
 
 .left {
-  width: 15%;
+  width: 20%;
 }
 
 .right {
@@ -282,7 +451,7 @@ h1 {
 }
 
 .middle {
-  width: 75%;
+  width: 70%;
 }
 
 /* Clear floats after the columns */
@@ -325,14 +494,17 @@ input[type=text] {
 
 /* Page content */
 .content {
-	/*width:70%;
+	/* width:70%;
 	height: 70%;
-    padding: 0;*/
-	font-family: Roboto;
+  padding: 0; */
+	
 }
 
-#html {
-	padding: 20px;
+#html, #before {
+  width: 100%;
+  padding: 20px;
+  height: 200px;
+  font-size: .9rem;
 }
 
 
@@ -378,6 +550,10 @@ input[type=text] {
 	position: relative;
 }
 
+#devTitle {   
+	font-size: 1.6em;
+}
+
 /* Main column */
 .main {   
 	position: relative;
@@ -397,17 +573,19 @@ input[type=text] {
   color: white;
 }
 
-ul {
+#cont1 ul {
   list-style: none; /* Remove HTML bullets */
   padding: 0;
   margin: 0;
 }
 
-ul li { 
+#cont1 ul li { 
   padding-left: 16px; 
+  font-size: .9rem;
+
 }
 
-ul li::before {
+#cont1 ul li::before {
   content: "•"; /* Insert content that looks like bullets */
   padding-right: 8px;
   color: #7CB342;
@@ -431,7 +609,7 @@ ul li::before {
 
 .comp {
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
 }
 
 .fadeOut {
@@ -439,7 +617,7 @@ ul li::before {
     -moz-animation: fade-out 6s forwards;
     -webkit-animation: fade-out 6s forwards;
     -o-animation: fade-out 6s forwards;
-	transition-timing-function: ;
+
 }
 
 @keyframes fade-out {
@@ -463,9 +641,11 @@ ul li::before {
 @keyframes rotate-360 {
     0% {
         transform: rotate(0deg); 
-    }
-    100% {
+        opacity: 1;
+      }
+      100% {
         transform: rotate(355deg); 
+        opacity: 0;
     }
 }
 
@@ -568,20 +748,21 @@ ul li::before {
 }
 */
 
-#cont1 {
-	margin: 5% 1%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
 #colorBox, #colorBox2 {
 	position: absolute;
-	top: 0;
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	list-style: none;
 	cursor: pointer;	
+}
+
+.colorBoxTop {
+	top: 0;
+}
+
+.colorBoxBottom {
+	bottom: 0;
 }
 
 #colorBox li, #colorBox2 li { 
@@ -644,13 +825,47 @@ ul li::before {
   color: #ffffff;
 }
 
-/*-----------------------slide2-----------------------*/
+.draggable {
 
-#mvotd {
-	width:100%;
-	cursor: pointer;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
 }
 
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+#contactPrint {
+  text-align: center;
+  display: none;
+}
+
+/*-----------------------slide2-----------------------*/
+
+#cont2, #cont3, #cont4, #cont404, #contact {
+  width: auto;
+  height: auto;
+  transition: 1s;
+  transform-origin: 110% -10%;
+  /* max-width: 65%; */
+}
+
+
+#mvotd img, #cont404 img,#pbcDesign img, #sandbox img, #contact img{
+  width: 60vw;
+}
 /*------------alt js style-------------*/
 
 .head1 {
@@ -769,3 +984,358 @@ ul li::before {
 }
 
 
+/*------------------------sl4 flipcard contact-----------------------*/
+
+
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+	height:80vh;
+	width: 80vh;
+	perspective: 1000px;   /* Remove this if you don't want the 3D effect */
+	border-radius: 30px;
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+
+.flip {
+    transform: rotate3d(-1, 1, 0, 180deg);
+}
+
+.flipRev {
+    transform: rotate3d(1, -1, 0, 180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  	font-family: Roboto;
+	color: white;
+    font-size: 3em; 
+	border-radius: 30px;
+	
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-image: linear-gradient(to bottom right, red, blue);
+    display: flex;
+	flex-wrap: wrap;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0,0.5);	
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+
+} 
+
+.cardInnerDiv {
+	width: 50%;
+	height: 50%;
+    display: flex;
+    align-items: center;
+	justify-content:center;
+}
+
+.back{
+	width: 100%;
+	height: 100%;
+   transform: rotateZ(-90deg); 
+   border-radius: 30px;
+   box-shadow: 10px 10px 5px rgba(0, 0, 0,0.5);
+}
+
+#contactBack {
+	background-color: red;
+}
+
+#commentaireBack {
+	background-color: blue;
+}
+
+#backButton {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	transform: rotateZ(-90deg); 
+}
+
+@media print {
+  #cont1 {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 15px;
+  }
+  .printInfo {
+    display: block;
+  }
+  #mainName, #printAdrBar {
+    display: none;
+  }
+  h3.printInfo {
+    text-align: center;
+  }
+}
+
+.print {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+
+}
+
+/******************************* mobile container *********************************************/
+
+#mobMainCont{
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: end;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.flex {
+  display: flex;  
+}
+
+#mobMainMvotd {
+  height: 90vh;
+  width: 100vw;
+  background-image: url("mvotd.png");
+  background-size: cover;
+  background-position: center; 
+}
+
+
+/******************************* menu *********************************************/
+
+#menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 20vw;
+  color: white;
+  font-family: CF Three Dimensions Personal;
+  font-weight: bold;
+  font-size: 2rem;
+  background-color: #000;
+  flex-direction: column;
+}
+
+#minicv {
+  width: 100%;
+}
+
+#menuIcon {
+  position: sticky;
+  margin: 2rem;
+  right: 2rem;
+  height: 50px;
+  transition-duration: 1s;
+  cursor: pointer;
+
+}
+
+.menuFirst {
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  padding: auto 1rem;
+  float: left;
+  transition: 1s;
+  cursor: pointer;
+  text-align: center;
+}
+
+#menuMinicv {
+  background-color: hotpink;
+}
+#menuProjets {
+  background-color: darkslateblue;
+}
+.hidden2{
+  visibility: hidden;
+}
+.flex{
+  display:flex;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#mobNav {
+  width: 100%;
+  /* height: 10vh; */
+  display: flex;
+}
+
+.mobNavCat{
+  width: 33.33%;
+  /* height: 10vh; */
+  font-family: CF Three Dimensions Personal;
+  color: white;
+  font-size: .8rem;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#mobAccordeon{
+  /* position: absolute; */
+  width: 100%;
+  /* height: 0;
+  display: flex;
+  flex-direction: column; */
+  min-width: 100%;
+  color: white;
+  font-size: .8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  background-color: purple;
+}
+
+#mobWindow{
+  overflow: scroll;
+}
+
+.borderProjets {
+  border-style: solid;
+  border-width: 5px;
+  border-color: purple;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height:100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  right: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  font-size:2rem;
+}
+
+#mobAccordeon img{
+  width: 100%;
+  cursor: pointer;
+  
+  /* height: 0; */
+}
+
+#mobPres {
+  background-color: yellowgreen;
+}
+#mobProj {
+  background-color: purple;
+}
+#mobCont {
+  background-color: orangered;
+}
+
+/****************************media queries ********************************/
+
+@media only screen and (orientation: portrait)and (max-width: 800px) {
+  
+  .container {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0px none #f1f1f1;
+    /* border-top-left-radius: 4px;
+    border-top-right-radius: 4px; */
+    background-color: #fff;
+  }
+
+  .container > .row {
+    display: none;
+  }
+  
+
+  #cont {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  #finalTitle img {
+    width: 70%;
+    height: auto;
+  }
+  
+  /*
+  #nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    border:  0px none #fff;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  #nav .row{
+    display: none;
+  }
+  #slideCont{
+    width: 100%;    
+  }
+  #navCont{
+    flex-direction: row;
+    display: flex;    
+  }
+  .navCat{
+    min-width: 33.33%;
+  }
+  #mobileNavTopView {
+    display: flex;
+    width: 100%;
+    transition: 1s;
+  }
+  #navPresCont {
+    order: 1;
+  }
+  */
+}
