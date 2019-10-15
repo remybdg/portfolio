@@ -271,9 +271,10 @@ function onclickMobNav(event) {
 			}
 			document.getElementById("mobAccordeon").classList.toggle("hidden");
 			document.getElementById("mobWindow").classList.toggle("borderProjets");
-
+			
 			break;
 		case "mobCont":
+			document.getElementById("mobContact").classList.toggle("hidden");
 
 			break;
 	}
@@ -311,7 +312,7 @@ function introSkip() {
 
 function windowSlide(elt) {
 
-	console.log("ok", elt);
+	// console.log("ok", elt);
 	var len = windowElts.length;
 	for (var cpt = 0; cpt < len; cpt++) {
 		// console.log(cpt);
@@ -321,7 +322,7 @@ function windowSlide(elt) {
 		
 	}
 	if (elt != undefined) {
-		console.log("ws", elt);
+		// console.log("ws", elt);
 		switch (elt) {
 			case "nav":
 				windowSlide();
@@ -340,8 +341,12 @@ function windowSlide(elt) {
 				document.getElementById("cont3").classList.remove("slideout");
 				break;
 			case "sbjs":
-				document.getElementById("adressBarSbjs").value ="http://www.WebDevRem.fr/sandboxJS";
+				document.getElementById("adressBarSbjs").value ="http://www.WebDevRem.fr/sandbox";
 				document.getElementById("cont4").classList.remove("slideout");
+				break;
+			case "sat":
+				document.getElementById("adressBarSat").value ="http://www.WebDevRem.fr/SortirAToulouse";
+				document.getElementById("cont5").classList.remove("slideout");
 				break;
 			case "contact":
 				document.getElementById("adressBarPbc").value ="http://www.WebDevRem.fr/contact";
@@ -367,6 +372,7 @@ function onclickNavPres() {
 		document.getElementById("navMvotd").classList.toggle("expanded");
 		document.getElementById("navPublicomDesign").classList.toggle("expanded");
 		document.getElementById("navSbjs").classList.toggle("expanded");
+		document.getElementById("navSat").classList.toggle("expanded");
 	}
 	
 	document.getElementById("navPresCont").classList.toggle("expanded");
@@ -380,6 +386,7 @@ function onclickNavProj() {
 	document.getElementById("navMvotd").classList.toggle("expanded");
 	document.getElementById("navPublicomDesign").classList.toggle("expanded");
 	document.getElementById("navSbjs").classList.toggle("expanded");
+	document.getElementById("navSat").classList.toggle("expanded");
 }
 
 function onclickNavMvotd() {
@@ -392,6 +399,10 @@ function onclickNavPbcDesign() {
 function onclickNavSbjs() {
 	console.log
 	windowSlide("sbjs");
+}
+function onclickNavSat() {
+	console.log
+	windowSlide("sat");
 }
 
 function onclickNavCont() {
@@ -440,10 +451,13 @@ function onclickNavArrow(event) {
 			case "https://publicom.design":
 				windowSlide("pbc");
 				break;
-			case "http://www.WebDevRem.fr/sandboxJS":
-			case "http://www.WebDevRem.fr/sandboxjs":
-
+			case "http://www.WebDevRem.fr/Sandbox":
+			case "http://www.WebDevRem.fr/sandbox":
 				windowSlide("sbjs");
+				break;
+			case "http://www.WebDevRem.fr/SortirAToulouse":
+			case "http://www.WebDevRem.fr/sortiratoulouse":
+				windowSlide("sat");
 				break;
 			case "http://www.WebDevRem.fr/contact":
 			case "http://www.WebDevRem.fr/Contact":
@@ -461,44 +475,6 @@ function onclickNavArrow(event) {
 		}
 }
 
-var currentDiv = 0;
-
-//scroll vers la droite avec une touche suivante
-function onclickNext() {
-	currentDiv++;
-	//si on est au dernier slide, le bouton next disparait
-	if ( currentDiv == 4) {
-		nextElt.classList.add("hidden");
-	}
-	slidesElt[currentDiv].scrollIntoView({ block: 'start',  behavior: 'smooth' });	
-	console.log(currentDiv);
-	//si on est au deuxieme slide, le bouton prev reapparrait
-	if ( currentDiv == 1) {
-	prevElt.classList.remove("hidden");
-	document.getElementById("menuIcon").classList.remove("hidden2");
-	document.getElementById("menuIcon").classList.add("show");
-	}
-
-
-}
-
-
-//scroll vers la gauche avec touche prev
-function onclickPrev() {
-	currentDiv--;
-	slidesElt[currentDiv].scrollIntoView({ block: 'start',  behavior: 'smooth' });	
-	console.log(currentDiv);
-	// si premier slide, on enleve le bouton prev
-	if ( currentDiv == 0) {
-		prevElt.classList.add("hidden");
-		document.getElementById("menu").classList.add("hidden");
-		document.getElementById("menu").classList.remove("flex");
-	}
-	//si on revient sur l'avant dernier slide (depuis le dernier) on rajoute le bouton next
-	if ( currentDiv == 3) {
-		nextElt.classList.remove("hidden");
-	}
-}
 
 function scaleHtmlIcon() {
 	document.getElementById("htmlLogo").classList.toggle("scale");
@@ -657,6 +633,7 @@ function pageConstructor() {
 		break;
 		case 34:
 		document.getElementById("compFooter").classList.add("compFooter");
+		document.getElementById("cont1").style.height = "auto";
 		document.getElementById("compe1").classList.add("hidden");
 		break;	
 		case 35:
@@ -761,6 +738,7 @@ function onclickCss2() {
 			
 			clearInterval(cssIconBeat2);
 			document.getElementById("jsLogo").classList.remove("hidden");
+
 			// jsIconBeat = setInterval(scaleJsIcon, 900);
 			document.getElementById("before").innerHTML ="";
 			typeWriter3()
@@ -813,7 +791,7 @@ function addJSFunctions() {
 	document.getElementById("footer").addEventListener("mouseleave", colorBoxOff);
 	
 	var draggableElt = document.getElementsByClassName("draggableElt");
-		for(cpt = 0; cpt<draggableElt.length; cpt++) {
+		for(var cpt = 0; cpt<draggableElt.length; cpt++) {
 			draggableElt[cpt].draggable = "true";
 			draggableElt[cpt].style.cursor = "grab";
 			draggableElt[cpt].addEventListener("mouseenter", dragSignalOn);
@@ -912,7 +890,7 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   console.log(data);
   ev.target.appendChild(document.getElementById(data));
-  //console.log(event.target);
+  console.log(event.target);
   if (event.target == document.getElementById("compFooter") && dragElt == document.getElementById("comp")) {
 	 document.getElementById("comp").classList.remove("comp");	
 	 

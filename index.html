@@ -109,14 +109,15 @@
 							<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
 							<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
 							<li data-elt="pbc">https://publicom.design/</li>
-							<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+							<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+							<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 							<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 						</ul>
 
 					</div>
 					<div class="column right">
 						<div style="float:right">
-								<span id="arrow" class="arrow" data-elt="adressBar" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+								<span id="arrow" class="arrow" data-elt="adressBar" onclick="onclickNavArrow(event)">&#x2192;</span>
 						</div>
 					</div>
 				</div>
@@ -167,6 +168,9 @@
 						<div id="navSbjs" class="navProjCat" onclick="onclickNavSbjs()">
 							<img src="sandbox.png" >
 						</div>
+						<div id="navSat" class="navProjCat" onclick="onclickNavSat()">
+							<img src="sandbox.png" >
+						</div>
 					</div>
 					<div id="navContact" class="navCat" onclick="onclickNavCont()">
 						Contact
@@ -180,7 +184,7 @@
 			<div id="mobMainCont" class="hidden">
 				<div id="mobWindow">
 
-					<div id="mobAccordeon" class="hidden" onclick="onclickMobAccordeon(event)">
+					<div id="mobAccordeon" class="hidden accordeon" onclick="onclickMobAccordeon(event)">
 						<img src="mvotd.png" id="mobMvotd">
 						<div data-id="mobMvotd" class="overlay hidden">
 							<h2>VIDEO OF THE DAY</h2> 
@@ -209,6 +213,9 @@
 							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSat">&#10006</p>
 
 						</div>
+					</div>		
+					<div id="mobContact" class="hidden accordeon" onclick="">
+					
 					</div>		
 				</div>		
 						
@@ -241,13 +248,14 @@
 									<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 									<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
 									<li data-elt="pbc">https://publicom.design/</li>
-									<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+									<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+									<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 									<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 								</ul>
 							</div>
 							<div class="column right">
 								<div style="float:right">
-									<span id="arrowPres" class="arrow" data-elt="adressBarPres" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									<span id="arrowPres" class="arrow" data-elt="adressBarPres" onclick="onclickNavArrow(event)">&#x2192;</span>
 								</div>
 							</div>
 						</div>
@@ -281,7 +289,7 @@
 	
 								<div class="rows">
 								<div id="side" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<img src="avatar.png" id="avatar" class="draggableElt" draggable="false" ondragstart="drag(event)" width="200" height="200">
+									<img src="avatar.png" id="avatar" class="draggableElt" draggable="false" ondragstart="drag(event)" width="150" height="150">
 									<p id="quote">oh vous etes là , je ne vous avez pas vu !</p>
 									
 								</div>
@@ -296,7 +304,7 @@
 											<li>Réalisation d'une maquette (Adobe XD)</li>
 											<li>Intégration HTML et CSS, design responsive</li>
 											<li>Dynamiser un site (JavaScript)</li>
-											<li>Communication avec un serveur (PHP)</li>
+											<li>Back-office et communication avec un serveur (PHP)</li>
 											<li>Gérer le contenu d'une base de données</li>
 										</ul>
 										<br>
@@ -386,20 +394,32 @@
 										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
 										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 										<li data-elt="pbc">https://publicom.design/</li>
-										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+										<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 									</ul>
 								</div>
 								<div class="column right">
 									<div style="float:right">
-										<span id="arrowMvotd" class="arrow" data-elt="adressBarMvotd" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+										<span id="arrowMvotd" class="arrow" data-elt="adressBarMvotd" onclick="onclickNavArrow(event)">&#x2192;</span>
 									</div>
 								</div>
 							</div>
 	
 							<div class="content">
-									<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="mvotd"><img src="mvotd.png" ></a>
-										
+								<div class="overlaySmall" id ="mvotdOverlay">
+									<div>
+										<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="" class="linkOl">
+											<span>MUSIC VIDEO OF THE DAY</span>&#x21E2
+										</a>
+										<p>Découvrez un nouveau clip tous les jours.</p>
+										<p>Technologies utilisées: PHP, SQL.</p>
+										<p>Création d'une base de données SQL, Intégration video en iframe.</p>
+									</div>
+								</div>
+								<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="mvotd">
+									<img src="mvotd.png">
+								</a>
 							</div>
 					</div>
 					
@@ -417,20 +437,36 @@
 										<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
 										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
-										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+										<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 									</ul>
 								</div>
 								<div class="column right">
 									<div style="float:right">
-										<span id="arrowPbc" class="arrow" data-elt="adressBarPbc" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+										<span id="arrowPbc" class="arrow" data-elt="adressBarPbc" onclick="onclickNavArrow(event)">&#x2192;</span>
 									</div>
 								</div>
 							</div>
 	
 							<div class="content">
-								<a href="https://publicom.design/" target="_blank" id="pbcDesign"><img src="pbcDesign.png" ></a>
-										
+								<a href="https://publicom.design/" target="_blank" id="pbcDesign">
+									<img src="pbcDesign.png">
+								</a>
+								<div class="overlaySmall" id="pbcOverlay">
+									<div>
+										<a href="https://publicom.design/" target="_blank" id="" class="linkOl">
+											<span>PUBLICOM.DESIGN</span>&#x21E2
+										</a>
+										<p>Mini-site pour l'agence de communication Publicom.</p>
+										<p>Technologies utilisées: JavaScript (Vue.JS), Ajax, KnaCSS.</p>
+										<p>Interrogation d'une api personnalisée (Strapi), Intégration d'un slider, mise en place d'un infinite scroll.</p>
+										<p>Dévellopement d'une 
+											<a href="https://chrome.google.com/webstore/detail/publicomdesign/omkdbcbbbbekdclibhhaaaiadcdemlge?hl=fr" target="_blank" id="extLink">extension chrome</a>
+											reprenant les mêmes fonctionnalités.
+										</p>
+									</div>	
+								</div>
 							</div>
 					</div>
 	
@@ -442,25 +478,77 @@
 								<span class="dot" style="background:#5AC05A;"></span>
 							</div>
 							<div class="column middle">
-								<input id="adressBarSbjs" type="text" value="http://www.WebDevRem.fr/sandboxJS/" data-elt="sbjs" onclick="onclickAdressBar(event)">
+								<input id="adressBarSbjs" type="text" value="http://www.WebDevRem.fr/sandbox" data-elt="sbjs" onclick="onclickAdressBar(event)">
 								<ul id="navListSbjs" class="navlist hidden" onclick="onclickNavList(event)">
 									<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
 									<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 									<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
 									<li data-elt="pbc">https://publicom.design/</li>
+									<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 									<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 								</ul>
 							</div>
 							<div class="column right">
 								<div style="float:right">
-									<span id="arrowSbjs" class="arrow" data-elt="adressBarSbjs" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+									<span id="arrowSbjs" class="arrow" data-elt="adressBarSbjs" onclick="onclickNavArrow(event)">&#x2192;</span>
 								</div>
 							</div>
 						</div>
 	
-						<div class="content">	
-								<a href="https://publicom.design/" target="_blank" id="sandbox"><img src="sandbox.png" ></a>
-					
+						<div class="content">
+							<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="sandbox">
+								<img src="sandbox.png">
+							</a>
+							<div class="overlaySmall" id="Sboverlay">
+								<div>
+									<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="" class="linkOl">
+										<span>SANDBOX</span>&#x21E2
+									</a>
+									<p>Expérimentations et effets ludiques.</p>
+									<p>Technologies utilisées: JavaScript, CSS.</p>
+								</div>
+							</div>	
+						</div>
+					</div>
+
+					<div class="container slideout window" id="cont5">
+						<div class="row">
+							<div class="column left">
+								<span class="dot" style="background:#ED594A;"></span>
+								<span class="dot" style="background:#FDD800;"></span>
+								<span class="dot" style="background:#5AC05A;"></span>
+							</div>
+							<div class="column middle">
+								<input id="adressBarSat" type="text" value="http://www.WebDevRem.fr/SortirAToulouse" data-elt="sat" onclick="onclickAdressBar(event)">
+								<ul id="navListSat" class="navlist hidden" onclick="onclickNavList(event)">
+									<li data-elt="pres">http://www.WebDevRem.fr/Présentation</li>
+									<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
+									<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
+									<li data-elt="pbc">https://publicom.design/</li>
+									<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+									<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
+								</ul>
+							</div>
+							<div class="column right">
+								<div style="float:right">
+									<span id="arrowSat" class="arrow" data-elt="adressBarSat" onclick="onclickNavArrow(event)">&#x2192;</span>
+								</div>
+							</div>
+						</div>
+	
+						<div class="content">
+							<a href="http://www.WebDevRem.fr/SortirAToulouse" target="_blank" id="sat">
+								<img src="sandbox.png">
+							</a>
+							<div class="overlaySmall" id="Satoverlay">
+								<div>
+									<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="" class="linkOl">
+										<span>SORTIR A TOULOUSE</span>&#x21E2
+									</a>
+									<p>Expérimentations et effets ludiques.</p>
+									<p>Technologies utilisées: JavaScript, CSS.</p>
+								</div>
+							</div>	
 						</div>
 					</div>
 					
@@ -478,13 +566,14 @@
 										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
 										<li data-elt="pbc">https://publicom.design/</li>
-										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+										<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 										<li data-elt="contact">http://www.WebDevRem.fr/Contact</li>
 									</ul>
 								</div>
 								<div class="column right">
 									<div style="float:right">
-										<span id="arrow404" class="arrow"  data-elt="adressBar404" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+										<span id="arrow404" class="arrow"  data-elt="adressBar404" onclick="onclickNavArrow(event)">&#x2192;</span>
 									</div>
 								</div>
 							</div>
@@ -509,19 +598,31 @@
 										<li data-elt="nav">http://www.WebDevRem.fr/Navigation</li>
 										<li data-elt="mvotd">http://www.WebDevRem.fr/MVOTD</li>
 										<li data-elt="pbc">https://publicom.design/</li>
-										<li data-elt="sbjs">http://www.WebDevRem.fr/sandboxJS/</li>
+										<li data-elt="sbjs">http://www.WebDevRem.fr/sandbox</li>
+										<li data-elt="sat">http://www.WebDevRem.fr/SortirAToulouse</li>
 									</ul>
 								</div>
 								<div class="column right">
 									<div style="float:right">
-										<span id="arrowCont" class="arrow"  data-elt="adressBarCont" onclick="onclickNavArrow(event)">&#8211;&#8250;</span>
+										<span id="arrowCont" class="arrow"  data-elt="adressBarCont" onclick="onclickNavArrow(event)">&#x2192;</span>
 									</div>
 								</div>
 							</div>
 	
 							<div class="content">
-								<img src="404.png" >
-										
+								<img src="avatar.png" height="250px" width="250px" >
+								<div id="ficheCont">
+									<h2>Remy Boisdanghien</h2>
+									<a href="mailto:rem@webdevrem.fr" id="mailto">rem@webdevrem.fr</a>	
+									<div>
+										<a href="https://github.com/remybdg" target="_blank" id="" class="socialIcon">
+											<img src="assets/linkedin.png" height="100px" width="100px">
+										</a>
+										<a href="https://github.com/remybdg" target="_blank" id="" class="socialIcon">
+											<img src="assets/octocat.png" height="100px" width="100px">
+										</a>
+									</div>
+								</div>	
 							</div>
 					</div>
 					<div class="flip-card hidden">
