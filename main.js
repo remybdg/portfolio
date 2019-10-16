@@ -237,7 +237,7 @@ function myFunction(x) {
 			break;		
 
 	
-			case 110:
+			case 105:
 				if (navElt.classList.contains("hidden")) {
 					introSkip();
 				}
@@ -256,29 +256,44 @@ function onclickMobMvotd() {
 }
 
 function onclickMobNav(event) {
-	console.log(event.target.id);
+	// console.log(event.target.id);
+	switchMobNavWindow(event.target.id)
 	switch (event.target.id) {
 		case "mobPres":
-
-			break;
-		case "mobProj":
-			if (document.getElementById("mobAccordeon").classList.contains("hidden") == false) {
-				for (var cpt = 0 ; cpt<overlayElts.length; cpt++) {
-					if (overlayElts[cpt].classList.contains("hidden") == false) {
-						overlayElts[cpt].classList.add("hidden");
-					}
-				}
-			}
-			document.getElementById("mobAccordeon").classList.toggle("hidden");
-			document.getElementById("mobWindow").classList.toggle("borderProjets");
-			
+			document.getElementById("mobWindow").classList.remove("borderProjets");
+			document.getElementById("mobWindow").classList.toggle("borderPres");
 			break;
 		case "mobCont":
-			document.getElementById("mobContact").classList.toggle("hidden");
-
+			document.getElementById("mobWindow").classList.remove("borderProjets");
+			document.getElementById("mobWindow").classList.remove("borderPres");
+			break;
+			case "mobProj":
+				if (document.getElementById("mobAccordeon").classList.contains("hidden") == false) {
+					for (var cpt = 0 ; cpt<overlayElts.length; cpt++) {
+						if (overlayElts[cpt].classList.contains("hidden") == false) {
+							overlayElts[cpt].classList.add("hidden");
+						}
+					}
+				}
+				
+			document.getElementById("mobWindow").classList.remove("borderPres");
+			document.getElementById("mobWindow").classList.toggle("borderProjets");
 			break;
 	}
 }
+
+function switchMobNavWindow(elt) {
+	var windows = document.getElementsByClassName("accordeon");
+	for (const window of windows) {
+		if (window.dataset.elt == elt) {
+			window.classList.toggle("hidden");
+		} else {
+			window.classList.add("hidden");
+		}
+	}
+}
+
+
 function onclickMobAccordeon(event) {
 	console.log(overlayElts);
 	for (var cpt = 0 ; cpt<overlayElts.length; cpt++) {
@@ -506,6 +521,7 @@ var l = 0;
 var cpt = 0;
 
 function typeWriter() {
+	document.getElementById("htmlLogo").style.cursor = "auto";
 	document.getElementById("cont").style.cursor = "progress";
 	clearInterval(htmlIconBeat);
 	if (i < txt.length) {

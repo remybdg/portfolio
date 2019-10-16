@@ -40,26 +40,6 @@ body {
 
 }
 
-
-/*
-#sl0 {
-    background-color: red;
-}
-#sl1 {
-    background-color: orange;
-}
-#sl2 {
-    background-color: yellow;
-}
-#sl3 {
-    background-color: green;
-}
-#sl4 {
-    background-color: blue;
-}
-*/
-
-
 .hidden {
 	display: none;
 }
@@ -105,6 +85,7 @@ body {
   bottom: 0;
   top: 0;
 }
+
 #finalTitleContainer {
   height: 100%;
   width: 100%;
@@ -112,6 +93,7 @@ body {
   justify-content: center;
   align-items: center;
   }
+
 #finalTitle img{
   margin: auto;
   height: 70%;
@@ -373,6 +355,77 @@ input {
   margin: auto 0;
 }
 
+#mobComp {
+  position: relative;
+  width: 80vw;
+  height: 100px;
+}
+
+#compH {
+  position: absolute; 
+  top: 5%;
+  left: 80%;
+  font-size: .9rem;
+  color: #431fa9;
+  font-weight: 400;
+}
+#compC {
+  position: absolute; 
+  top: 30%;
+  left: 10%;
+  color: #c93f35;
+  font-weight: 600;
+}
+#compJ {
+  position: absolute; 
+  top: 80%;
+  left: 5%;
+  font-size: 1.3rem;
+  color: #3a56d4;
+  font-weight: 300;
+  font-style: italic;
+}
+#compS {
+  position: absolute; 
+  top: 25%;
+  left: 50%;
+  font-size: 1.3rem;
+  color: #0c6e11;
+  font-weight: 500;
+  font-style: italic;
+}
+#compP {
+  position: absolute; 
+  top: 5%;
+  left: 28%;
+  color: #a91f87;
+  font-weight: 800;
+}
+#compA {
+  position: absolute; 
+  top: 90%;
+  left: 70%;
+  color: #ddd01b;
+  font-weight: 500;
+}
+#compQ {
+  position: absolute; 
+  top: 65%;
+  left: 85%;
+  color: #7a0707;
+  font-weight: 600;
+  font-style: italic;
+}
+#compW {
+  position: absolute; 
+  top: 59%;
+  left: 42%;
+  font-size: .9rem;
+  color: #105279;
+  font-weight: 700;
+}
+
+
 /*-----------------------slide1-----------------------*/
 
 #sl1 {
@@ -409,6 +462,10 @@ input {
 	width: 10vw;
 	text-align:center;
 	padding: 1%;
+}
+
+#cssLogo, #htmlLogo, #printLogo {
+  cursor: pointer;
 }
 
 .icon {
@@ -1213,9 +1270,36 @@ input[type=text] {
   background-color: purple;
 }
 
-#mobContact{
-  color: white;
-  height: 100vh;
+#mobPresentation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 2rem;
+  color: #150952;
+}
+
+#mobDev {
+  text-align: center;
+  font-size: 1.5rem;
+  border-top: 2px solid yellowgreen;
+  border-bottom: 2px solid yellowgreen;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+#ficheContMob{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('assets/wdrBg.png') ;
+  background-size: 50%;
+  padding-bottom: 10vh;
+  /* overflow: hidden; */
 }
 
 #mobWindow{
@@ -1226,6 +1310,12 @@ input[type=text] {
   border-style: solid;
   border-width: 5px;
   border-color: purple;
+}
+
+.borderPres {
+  border-style: solid;
+  border-width: 5px;
+  border-color: yellowgreen;
 }
 
 .overlay {
