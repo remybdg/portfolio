@@ -13,6 +13,9 @@
 	<div id="skipBtn" onclick="introSkip()">
 		Passer l intro
 	</div>
+	<div id="construction">
+		site en cours de construction
+	</div>
 	<div id="cont" onscroll="onscrollBody(event)">
 
 		<div class="slide" id=sl0 onmouseenter="getCoor(event)" onmousemove="showCoords(event)">
@@ -89,7 +92,7 @@
 		
 		<div id="finalTitle" class="hidden">
 			<div id="finalTitleContainer">
-				<img src="wdrLogo.png">
+				<img src="assets/wdrLogo.png">
 			</div>
 		</div>		
 		
@@ -141,13 +144,13 @@
 								clickez sur le logo pour voir ca!
 						</div>
 						
-						<img src="html5.png" id="htmlLogo" class=" icon" width="30%" onclick="typeWriter()">
+						<img src="assets/html5.png" id="htmlLogo" class=" icon" width="30%" onclick="typeWriter()">
 
-						<img src="css3.png" id="cssLogo" class="hidden icon" width="30%" >									
+						<img src="assets/css3.png" id="cssLogo" class="hidden icon" width="30%" >									
 					
-						<img src="js.png" id="jsLogo" class="hidden icon" width="30%" onclick="onclickJs()">	
+						<img src="assets/js.png" id="jsLogo" class="hidden icon" width="30%" onclick="onclickJs()">	
 
-						<img src="print.png" id="printLogo" class="hidden icon" width="30%" onclick="onclickPrint()">	
+						<img src="assets/print.png" id="printLogo" class="hidden icon" width="30%" onclick="onclickPrint()">	
 
 
 					</div>
@@ -159,17 +162,17 @@
 					<div id="navProjetsCont">
 					
 						<div id="navMvotd" class="navProjCat" onclick="onclickNavMvotd()">
-							<img src="mvotd.png" >
+							<img src="assets/mvotd.png" >
 							
 						</div>
 						<div id="navPublicomDesign" class="navProjCat" onclick="onclickNavPbcDesign()">
-							<img src="pbcDesign.png" >
+							<img src="assets/pbcDesign.png" >
 						</div>
 						<div id="navSbjs" class="navProjCat" onclick="onclickNavSbjs()">
-							<img src="sandbox.png" >
+							<img src="assets/sandbox.png" >
 						</div>
 						<div id="navSat" class="navProjCat" onclick="onclickNavSat()">
-							<img src="sandbox.png" >
+							<img src="assets/sat.png" >
 						</div>
 					</div>
 					<div id="navContact" class="navCat" onclick="onclickNavCont()">
@@ -185,7 +188,7 @@
 				<div id="mobWindow">
 					<div id="mobPresCont" class="hidden accordeon" data-elt="mobPres" onclick="">
 						<div id="mobPresentation">
-							<img src="avatar.png" height="150px" width="150px" >
+							<img src="assets/avatar.png" height="150px" width="150px" >
 							<h2>Remy Boisdanghien</h2>
 							<h2 id="mobDev">Développeur Web Full Stack Junior</h2>
 
@@ -220,38 +223,62 @@
 						</div>
 					</div>
 					<div id="mobAccordeon" class="hidden accordeon" data-elt="mobProj" onclick="onclickMobAccordeon(event)">
-						<img src="mvotd.png" id="mobMvotd">
+						<img src="assets/mvotd.png" id="mobMvotd">
 						<div data-id="mobMvotd" class="overlay hidden">
-							<h2>VIDEO OF THE DAY</h2> 
-							<p>go</p>
-							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobMvotd">&#10006</p>
-
+							<div class="overlayCont">
+								<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="" class="linkOl">
+									<span>MUSIC VIDEO OF THE DAY</span>&#x21E2
+								</a>
+								<p>Découvrez un nouveau clip tous les jours.</p>
+								<p>Technologies utilisées: PHP, SQL.</p>
+								<p>Création d'une base de données SQL, Intégration video en iframe.</p>
+								<p class="closeBtn" onclick="onclickClose(event)" data-id="mobMvotd">&#10006</p>
+							</div>
 						</div>
-						<img src="pbcDesign.png" id="mobPbc">
+						<img src="assets/pbcDesign.png" id="mobPbc">
 						<div data-id="mobPbc" class="overlay hidden">
-							<h2>VIDEO OF THE DAY</h2> 
-							<p>go</p>
+							<div class="overlayCont">
+								<a href="https://publicom.design/" target="_blank" id="" class="linkOl">
+									<span>PUBLICOM.DESIGN</span>&#x21E2
+								</a>
+								<p>Mini-site pour l'agence de communication Publicom.</p>
+								<p>Technologies utilisées: JavaScript (Vue.JS), Ajax, KnaCSS.</p>
+								<p>Interrogation d'une api personnalisée (Strapi), Intégration d'un slider, mise en place d'un infinite scroll.</p>
+								<p>Dévellopement d'une 
+									<a href="https://chrome.google.com/webstore/detail/publicomdesign/omkdbcbbbbekdclibhhaaaiadcdemlge?hl=fr" target="_blank" id="extLink">extension chrome</a>
+									reprenant les mêmes fonctionnalités.
+								</p>
+							</div>
 							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobPbc">&#10006</p>
 							
 						</div>
-						<img src="sandbox.png" id="mobSandbox">
+						<img src="assets/sandbox.png" id="mobSandbox">
 						<div data-id="mobSandbox" class="overlay hidden">
-							<h2>VIDEO OF THE DAY</h2> 
-							<p>go</p>
-							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSandbox">&#10006</p>
-							
+							<div class="overlayCont">
+								<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="" class="linkOl">
+									<span>SANDBOX</span>&#x21E2
+								</a>
+								<p>Expérimentations et effets ludiques.</p>
+								<p>Technologies utilisées: JavaScript, CSS.</p>
+								<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSandbox">&#10006</p>
+							</div>
 						</div>
-						<img src="pbcDesign.png" id="mobSat">
+						<img src="assets/sat.png" id="mobSat">
 						<div data-id="mobSat" class="overlay hidden">
-							<h2>VIDEO OF THE DAY</h2> 
-							<p>go</p>
-							<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSat">&#10006</p>
-
+							<div class="overlayCont">
+								<a href="http://www.WebDevRem.fr/SortirAToulouse" target="_blank" id="" class="linkOl">
+									<span>SORTIR A TOULOUSE</span>&#x21E2
+								</a>
+								<p>Agenda des manifestations dans la métropole toulousaine.</p>
+								<p>Technologies utilisées: JavaScript(POO), Ajax, API.</p>
+								<p>Utilisation de l'API data.toulouse-métropole et GoogleMaps.</p>
+								<p class="closeBtn" onclick="onclickClose(event)" data-id="mobSat">&#10006</p>
+							</div>
 						</div>
 					</div>		
 					<div id="ficheContMobCont" class="hidden accordeon" data-elt="mobCont" onclick="">
 						<div id="ficheContMob">
-							<img src="avatar.png" height="150px" width="150px" >
+							<img src="assets/avatar.png" height="150px" width="150px" >
 							<h2>Remy Boisdanghien</h2>
 							<a href="mailto:rem@webdevrem.fr" id="mailto">rem@webdevrem.fr</a>	
 							<div>
@@ -336,7 +363,7 @@
 	
 								<div class="rows">
 								<div id="side" class="hidden" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<img src="avatar.png" id="avatar" class="draggableElt" draggable="false" ondragstart="drag(event)" width="150" height="150">
+									<img src="assets/avatar.png" id="avatar" class="draggableElt" draggable="false" ondragstart="drag(event)" width="150" height="150">
 									<p id="quote">oh vous etes là , je ne vous avez pas vu !</p>
 									
 								</div>
@@ -389,7 +416,7 @@
 									clickez sur le logo pour voir ca!
 															
 										<div class="hidden" id="pic">
-											<img src="avatar.png" id="avatar" width="200" height="200">
+											<img src="assets/avatar.png" id="avatar" width="200" height="200">
 										</div>
 										<div id="header">
 											<p id="title">Bonjour, je suis Remy B. </p>
@@ -465,7 +492,7 @@
 									</div>
 								</div>
 								<a href="http://www.webdevrem.fr/MVOTD/index.php" target="_blank" id="mvotd">
-									<img src="mvotd.png">
+									<img src="assets/mvotd.png">
 								</a>
 							</div>
 					</div>
@@ -498,7 +525,7 @@
 	
 							<div class="content">
 								<a href="https://publicom.design/" target="_blank" id="pbcDesign">
-									<img src="pbcDesign.png">
+									<img src="assets/pbcDesign.png">
 								</a>
 								<div class="overlaySmall" id="pbcOverlay">
 									<div>
@@ -544,7 +571,7 @@
 	
 						<div class="content">
 							<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="sandbox">
-								<img src="sandbox.png">
+								<img src="assets/sandbox.png">
 							</a>
 							<div class="overlaySmall" id="Sboverlay">
 								<div>
@@ -585,11 +612,11 @@
 	
 						<div class="content">
 							<a href="http://www.WebDevRem.fr/SortirAToulouse" target="_blank" id="sat">
-								<img src="sandbox.png">
+								<img src="assets/sat.png">
 							</a>
 							<div class="overlaySmall" id="Satoverlay">
 								<div>
-									<a href="http://www.WebDevRem.fr/sandbox" target="_blank" id="" class="linkOl">
+									<a href="http://www.WebDevRem.fr/SortirAToulouse" target="_blank" id="" class="linkOl">
 										<span>SORTIR A TOULOUSE</span>&#x21E2
 									</a>
 									<p>Agenda des manifestations dans la métropole toulousaine.</p>
@@ -627,7 +654,7 @@
 							</div>
 	
 							<div class="content">
-									<img src="404.png" >
+									<img src="assets/404.png" >
 										
 							</div>
 					</div>
@@ -658,7 +685,7 @@
 							</div>
 	
 							<div class="content">
-								<img src="avatar.png" height="250px" width="250px" >
+								<img src="assets/avatar.png" height="250px" width="250px" >
 								<div id="ficheCont">
 									<h2>Remy Boisdanghien</h2>
 									<a href="mailto:rem@webdevrem.fr" id="mailto">rem@webdevrem.fr</a>	

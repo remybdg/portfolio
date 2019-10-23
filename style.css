@@ -111,6 +111,17 @@ body {
   font-size:.9em;
   text-align: center;
 }
+#construction {
+  color:  #fff;
+  position: absolute;
+  left: 1vw;
+  bottom: 1vw;
+  cursor: pointer; 
+  z-index: 2;
+  font-family: CF Three Dimensions Personal;
+  font-size:.9em;
+  text-align: center;
+}
 
 @font-face {
     font-family: 'CF Three Dimensions Personal';
@@ -425,7 +436,30 @@ input {
   font-weight: 700;
 }
 
+.overlayCont {
+  cursor: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
+#mobAccordeon .overlay a {
+  color: yellowgreen;
+  text-decoration-color: #fff;
+}
+
+#mobAccordeon .overlay span {
+  color: white;
+  text-decoration-color: yellowgreen;
+  transition: .3s
+}
+#mobAccordeon .overlay span:hover {
+  color: yellowgreen;
+  text-decoration-color: #fff;
+}
 /*-----------------------slide1-----------------------*/
 
 #sl1 {
@@ -895,21 +929,34 @@ input[type=text] {
   text-decoration: none;
   font-size: 2rem;
   color: purple;
+  transition: 0.3s;
 }
 .linkOl span {
   text-decoration: underline;
   color: #000;
   font-size: 1.3rem;
   padding: 1rem 1rem 1rem 3rem;
+  text-decoration-color: purple;
+  transition: .3s
+}
+.linkOl span:hover, #extLink:hover{
+  text-decoration: underline;
+  text-decoration-color: #000;
+  color: purple;
+}
+.linkOl span:hover::after {
+
+  color: purple;
 }
 
 #extLink {
   text-decoration-color: purple;
   color: #000;
+  transition: .3s
 }
 
-.content a:hover .linkOl {
-  color: purple;
+.content .linkOl:hover {
+  color: #000;
 }
 
 /*------------alt js style-------------*/
@@ -1327,6 +1374,7 @@ input[type=text] {
   bottom: 0;
   left: 0; 
   right: 0;
+
 }
 
 .closeBtn {
@@ -1334,6 +1382,7 @@ input[type=text] {
   bottom: 3rem;
   right: 3rem;
   font-size:2rem;
+  cursor: pointer;
 }
 
 #mobAccordeon img{
@@ -1354,6 +1403,14 @@ input[type=text] {
 }
 
 /****************************media queries ********************************/
+
+@media only screen and (max-width: 1200px) {
+  #construction {
+    bottom: auto;
+    top: 1vw;
+    /* padding-left: 3rem; */
+  }
+}
 
 @media only screen and (orientation: portrait)and (max-width: 800px) {
   
